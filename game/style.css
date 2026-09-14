@@ -1,0 +1,28 @@
+:root { color-scheme:light; }
+* { box-sizing:border-box; }
+html,body { margin:0; background:#fff; overflow:hidden; }
+body { min-height:100svh; display:grid; place-items:center; }
+.invitation { width:min(100%,960px); }
+.game-shell { position:relative; }
+.game-frame { position:relative; aspect-ratio:16/9; overflow:hidden; background:#2889ef; touch-action:none; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; }
+canvas { display:block; width:100%; height:100%; image-rendering:pixelated; touch-action:none; }
+button { border:0; border-radius:0; font:700 12px ui-monospace,"Courier New",monospace; cursor:pointer; touch-action:manipulation; }
+button:focus-visible,canvas:focus-visible { outline:2px solid #ffe8a4; outline-offset:-3px; }
+.screen-overlay { position:absolute; inset:0; display:flex; justify-content:center; align-items:flex-start; padding-top:10%; touch-action:none; }
+.start-card { text-align:center; color:#fff; text-shadow:2px 2px #244b70; }
+.tiny-label { display:block; font:700 clamp(8px,1.8vw,13px)/1.4 monospace; letter-spacing:3px; color:#ffdfab; margin-bottom:8px; }
+.start-card h2 { font:700 clamp(16px,4.4vw,32px)/1.2 ui-monospace,"Courier New",monospace; margin:0 0 6px; letter-spacing:1px; }
+.start-card h2 span { color:#ffc2d6; }
+.start-card h2 { width:clamp(240px,64vw,590px); margin:0 auto 8px; }
+.pixel-label { width:100%; height:auto; pointer-events:none; }
+.start-card p { font:clamp(9px,2.3vw,14px)/1.5 system-ui,sans-serif; margin:0 0 10px; }
+.start-card button,.end-controls button { color:#fff8de; background:#383448; padding:7px 13px; min-height:34px; border:2px solid #ead5b6; box-shadow:0 0 0 2px #292737,3px 4px 0 2px #292737; width:clamp(132px,28vw,205px); }
+.start-card button:disabled { opacity:.6; }
+.end-controls { position:absolute; bottom:2%; left:0; right:0; text-align:center; pointer-events:none; }
+.end-controls button { pointer-events:auto; }
+.game-toolbar { position:absolute; right:5px; top:2px; pointer-events:none; }
+.game-toolbar p { display:none; }
+.game-toolbar button { pointer-events:auto; color:#fff2d0; background:transparent; min-height:32px; min-width:44px; padding:6px 4px; font-size:clamp(7px,1.4vw,10px); }
+.game-toolbar button { width:clamp(54px,13vw,90px); }
+[hidden] { display:none!important; }
+.sr-only { position:absolute; width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap; }

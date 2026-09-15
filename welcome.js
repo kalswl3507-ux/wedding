@@ -16,6 +16,7 @@
         progress.style.width = percent + '%';
         progress.parentElement.setAttribute('aria-valuenow', String(percent));
         if (data.ready) {
+            screen.classList.toggle('is-ready', !data.failed);
             ready = true;
             failed = data.failed > 0;
             enter.disabled = false;

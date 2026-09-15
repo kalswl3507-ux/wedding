@@ -230,14 +230,7 @@
             border-top: 0;
             padding-top: 0;
         }
-        .wedding-calendar::before, .gallery-header::before, .info::before, .guestbook::before, .gift-section::before {
-            content: '';
-            display: block;
-            height: 32px;
-            margin: 0 0 36px;
-            background: url('B_style/line.png') center / 100% auto no-repeat;
-            pointer-events: none;
-        }
+
         #directionsTitle { letter-spacing: .04em; }
         .calendar-table, .gallery-controls { font-variant-numeric: tabular-nums; }
         .gift-section { margin-top: 80px; }
@@ -327,8 +320,8 @@ body, html { background: #faf7f2; color: #443c35; }
 /* Photograph first; restrained Korean serif typography for the hanbok edition. */
 .cover-photo { width: 100%; max-width: 560px; margin: 0 auto; }
 .cover-photo img { display: block; width: 100%; height: auto; }
-.cover-photo { position: relative; }
-.cover-photo video { display: block; width: 100%; height: auto; }
+.cover-photo { position: relative; overflow: hidden; }
+.cover-photo video { display: block; width: 100%; height: auto; transform: scale(1.15); transform-origin: center 40%; }
 .cover-play { position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); border: 1px solid #dfd1bf; border-radius: 24px; background: #fffdf9; color: #77624e; min-height: 48px; padding: 12px 24px; font: inherit; cursor: pointer; }
 .cover-play[hidden] { display: none; }
 .invitation-flower { display: block; width: 64px; height: auto; margin: 0 auto 30px; }
@@ -364,3 +357,7 @@ body, html { background: #faf7f2; color: #443c35; }
 @media (max-width: 360px) {
     .section-title, .gallery-header h3, .wedding-calendar .section-title { font-size: 17px; min-height: 90px; }
 }
+
+.title + .line-1 { margin: -6px auto 30px; }
+.wedding-calendar > .soft-divider:last-child, .info > .soft-divider:last-child { margin: 40px auto 0; }
+.wedding-calendar > .line-4, .info > .line-5, .guestbook > .line-1 { opacity: 1; }

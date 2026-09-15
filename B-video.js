@@ -2,9 +2,10 @@
     const video = document.getElementById('coverVideo');
     const button = document.getElementById('coverPlay');
     let visible = true;
+    let finished = false;
     video.muted = true;
     async function play() {
-        if (document.hidden || !visible || video.error) return;
+        if (finished || video.ended || document.hidden || !visible || video.error) return;
         try {
             await video.play();
             button.hidden = true;
@@ -15,6 +16,7 @@
     }
     button.addEventListener('click', play);
     video.addEventListener('playing', () => { button.hidden = true; });
+    video.addEventListener('ended', () => { finished = true; button.hidden = true; });
     video.addEventListener('error', () => { button.hidden = true; video.poster = 'assets/B-main-poster.jpg'; });
     const observer = new IntersectionObserver(entries => {
         visible = entries[0].isIntersecting;

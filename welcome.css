@@ -5,7 +5,7 @@
 .invitation-locked .welcome-screen[hidden] { display: flex; }
 .welcome-card { width: 100%; max-width: 390px; margin: auto; text-align: center; color: #74635e; }
 .welcome-kicker { font: 12px/1.5 monospace; letter-spacing: .24em; margin: 0 0 36px; }
-.welcome-envelope { width: 280px; max-width: 90%; height: auto; display: block; margin: 0 auto 32px; }
+.welcome-envelope { width: 320px; max-width: 100%; height: auto; display: block; margin: 0 auto 24px; image-rendering: pixelated; }
 .welcome-card h1 { font-size: clamp(21px, 5.9vw, 29px); line-height: 1.5; font-weight: 600; letter-spacing: -.05em; margin: 0; word-break: keep-all; }
 .welcome-heart { display: block; width: 28px; height: 26px; margin: 24px auto 30px; color: #d98ba3; }
 .welcome-names { font-size: 18px; letter-spacing: .15em; margin: 0 0 12px; }

@@ -21,10 +21,13 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="B.css?v=beige-title-1">
+    <link rel="stylesheet" href="B.css?v=main-flower-1">
 </head>
 <body>
-    <header class="cover-photo"><img src="assets/B-cover-12.jpg" width="1000" height="1500" alt="한복을 입은 신랑 최호진과 신부 김채나" fetchpriority="high"></header>
+    <header class="cover-photo">
+        <video id="coverVideo" autoplay muted loop playsinline preload="auto" poster="assets/B-main-poster.jpg" width="720" height="1280" aria-label="신랑 신부의 청첩장 영상"><source src="assets/B-main.mp4" type="video/mp4"></video>
+        <button type="button" class="cover-play" id="coverPlay" hidden>영상 재생</button>
+    </header>
     <div class="music-toolbar">
         <button class="music-toggle" id="musicToggle" type="button" aria-label="배경음악 켜기" aria-pressed="false">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4 6 8H3v8h3l5 4Z"/><path class="sound-off" d="m16 9 6 6m0-6-6 6"/><g class="sound-waves"><path d="M15 8a6 6 0 0 1 0 8M18 4a11 11 0 0 1 0 16"/></g></svg>
@@ -35,6 +38,7 @@
     <div class="fade-in-page">
         <div class="wrapper">
             <div class="content-box">
+                <img class="invitation-flower" src="B_style/flower.png" width="1280" height="1280" alt="">
                 <p class="eyebrow">소중한 분들을 초대합니다</p><h1 class="title">우리, 결혼합니다</h1>
                 <div class="invitation-details">
                     <time datetime="2027-01-10T15:40:00+09:00">2027.01.10, 일요일 오후 3시 40분</time>
@@ -328,5 +332,6 @@
     <script src="navigation.js"></script>
     <script src="accounts.js"></script>
     <script src="B-music.js?v=1"></script>
+    <script src="B-video.js?v=1"></script>
 </body>
 </html>

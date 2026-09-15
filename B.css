@@ -203,15 +203,15 @@
         .guestbook-form button:disabled { opacity: .7; cursor: default; }
         .guestbook-status, .navigation-status { font-size: .8rem; color: #777; line-height: 1.8; }
         .guestbook-list { list-style: none; padding: 0; margin-top: 28px; text-align: left; }
-        .guestbook-list li { margin-bottom: 14px; padding: 18px; border: 1px solid #f0dfe4; background: #fffafb; border-radius: 6px; overflow-wrap: anywhere; }
+        .guestbook-list li { margin-bottom: 14px; padding: 18px; border: 1px solid #d8e2d0; background: #f5f8f1; border-radius: 6px; overflow-wrap: anywhere; }
         .guestbook-list strong { color: var(--accent); font-size: .9rem; }
         .guestbook-list p { white-space: pre-wrap; line-height: 1.8; font-size: .9rem; color: #444; }
         .guestbook-list time { font-size: .75rem; color: #999; }
-        .guestbook-more { min-height: 44px; padding: 10px 24px; border: 1px solid #e8cbd4; border-radius: 6px; background: #fff0f3; color: #75545d; font: inherit; font-size: .85rem; cursor: pointer; }
+        .guestbook-more { min-height: 44px; padding: 10px 24px; border: 1px solid #cddac5; border-radius: 6px; background: #eaf0e4; color: #4e6253; font: inherit; font-size: .85rem; cursor: pointer; }
         .guestbook-more:disabled { opacity: .6; cursor: wait; }
         .wedding-calendar { margin: 65px 0 75px; }
         .wedding-calendar .section-title { margin: 24px 0 20px; }
-        .wedding-calendar .date { font-size: .95rem; line-height: 1.8; background: #fff0f3; border-radius: 0; padding: 16px 12px; color: #75545d;  }
+        .wedding-calendar .date { font-size: .95rem; line-height: 1.8; background: #eaf0e4; border-radius: 0; padding: 16px 12px; color: #4e6253;  }
         .calendar-table .wedding-week td { vertical-align: top; padding-top: 5px; padding-bottom: 34px; }
         .calendar-table .wedding-date-cell { position: relative; }
         .calendar-table .calendar-time { position: absolute; top: 41px; left: 50%; transform: translateX(-50%); display: block; width: auto; height: auto; margin: 0; color: #a95f78; font-size: 10px; line-height: 1.4; font-weight: 500; white-space: nowrap; }
@@ -227,7 +227,7 @@
         .location { line-height: 1.8; word-break: keep-all; }
         .guestbook-status:empty, .navigation-status:empty { display: none; }
         .wedding-calendar, .gallery-header, .info, .guestbook, .gift-section {
-            border-top: 1px solid #e7dfd7;
+            border-top: 1px solid #dbe3d7;
             padding-top: 48px;
         }
         #directionsTitle { letter-spacing: .04em; }
@@ -235,15 +235,15 @@
         .gift-section { margin-top: 80px; }
         #giftTitle { letter-spacing: .04em; }
         .gift-group { text-align: left; margin-bottom: 12px; }
-        .gift-group summary { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; background: #fff0f3; border-radius: 12px; color: #75545d; font-size: .95rem; font-weight: 500; cursor: pointer; list-style: none; }
+        .gift-group summary { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; background: #eaf0e4; border-radius: 12px; color: #4e6253; font-size: .95rem; font-weight: 500; cursor: pointer; list-style: none; }
         .gift-group summary::-webkit-details-marker { display: none; }
         .gift-group summary::after { content: ''; width: 7px; height: 7px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg); margin: 0 5px 4px 12px; }
         .gift-group[open] summary::after { transform: rotate(225deg); margin-bottom: -4px; }
         .gift-group summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-        .gift-group[open] { background: #fff8fa; border-radius: 12px; }
+        .gift-group[open] { background: #f5f8f1; border-radius: 12px; }
         .gift-group[open] summary { border-radius: 12px 12px 0 0; }
         .gift-accounts { list-style: none; margin: 0; padding: 0 16px 8px; }
-        .gift-account + .gift-account { border-top: 1px solid rgba(169, 95, 120, .16); }
+        .gift-account + .gift-account { border-top: 1px solid rgba(80, 108, 73, .18); }
         .gift-group .account-copy { background: transparent; }
         .gift-account { padding: 16px 0; font-size: .9rem; line-height: 1.8; overflow-wrap: anywhere; }
         .gift-person { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
@@ -258,12 +258,12 @@
         .copy-status:empty { display: none; }
 
 /* B: formal invitation, immediate entry, generous type and touch targets. */
-:root { --accent: #584c43; }
-body, html { background: #faf8f4; color: #413b36; }
+:root { --accent: #4e6253; }
+body, html { background: #f7f9f5; color: #343d35; }
 .fade-in-page { opacity: 1; animation: none; }
 .wrapper { max-width: 560px; padding: 0 16px 40px; }
-.content-box { padding: 32px 24px 64px; background: #fffefa; }
-.eyebrow { margin: 0 0 16px; color: #76695e; font-size: 15px; letter-spacing: .12em; }
+.content-box { padding: 32px 24px 64px; background: #fffffc; }
+.eyebrow { margin: 0 0 16px; color: #5d715e; font-size: 15px; letter-spacing: .12em; }
 .title { font-family: Georgia, 'Batang', serif; font-size: 30px; letter-spacing: .06em; margin: 0 0 28px; }
 .section-title, .gallery-header h3 { font-family: Georgia, 'Batang', serif; font-size: 23px; font-weight: 600; }
 .invitation-details { font-size: 17px; line-height: 2; margin: 0 0 28px; }
@@ -273,35 +273,35 @@ body, html { background: #faf8f4; color: #413b36; }
 .names small { font-size: 14px; font-weight: 400; }
 .person-phone { width: 48px; height: 48px; }
 .quick-links { display: flex; justify-content: center; gap: 10px; margin: 20px 0 56px; }
-.quick-links a { padding: 12px 14px; border: 1px solid #d9cfc2; border-radius: 6px; font-size: 16px; text-decoration: none; color: var(--accent); }
+.quick-links a { padding: 12px 14px; border: 1px solid #d1ddcd; border-radius: 6px; font-size: 16px; text-decoration: none; color: var(--accent); }
 .message { font-size: 17px; font-weight: 400; line-height: 2.2; margin-bottom: 32px; }
 .family-names { padding: 20px 0; font-size: 17px; line-height: 2; }
 .family-names p { margin: 6px 0; }
-.family-names span { margin: 0 9px; font-size: 14px; color: #74695e; }
-.wedding-calendar .date { background: #f2ede5; color: var(--accent); border-radius: 8px; font-size: 17px; line-height: 2; padding: 18px; }
+.family-names span { margin: 0 9px; font-size: 14px; color: #606c5e; }
+.wedding-calendar .date { background: #edf2e9; color: var(--accent); border-radius: 8px; font-size: 17px; line-height: 2; padding: 18px; }
 .calendar-table { font-size: 17px; }
 .calendar-table th { font-size: 15px; }
 .calendar-table td { height: 48px; }
-.calendar-table .wedding-day { color: white; background: #937260; border-radius: 50%; width: 36px; height: 36px; }
-.calendar-table .calendar-time { font-size: 12px; color: #725242; top: 44px; }
+.calendar-table .wedding-day { color: white; background: #657e62; border-radius: 50%; width: 36px; height: 36px; }
+.calendar-table .calendar-time { font-size: 12px; color: #4d684c; top: 44px; }
 .calendar-table .wedding-week td { padding-bottom: 42px; }
 .calendar-table th:first-child { color: #a25852; }
 .main-photo-area { height: auto; aspect-ratio: 3 / 4; }
-.gallery-controls, .address, .navigation-links a, .guestbook-status, .navigation-status { font-size: 16px; color: #675d53; }
+.gallery-controls, .address, .navigation-links a, .guestbook-status, .navigation-status { font-size: 16px; color: #586554; }
 .thumb-btn { flex-basis: 84px; height: 84px; }
 .location { font-size: 19px; }
 .venue-phone { flex-basis: 48px; }
-.transit-guide, .transit-guide .bus-routes { font-size: 16px; color: #514b44; }
+.transit-guide, .transit-guide .bus-routes { font-size: 16px; color: #414b40; }
 .transit-guide h4 { font-size: 18px; }
-.guestbook-form label, .gift-role { font-size: 16px; color: #665b50; }
+.guestbook-form label, .gift-role { font-size: 16px; color: #52624f; }
 .guestbook-form input, .guestbook-form textarea { font-size: 17px; }
-.guestbook-form input::placeholder, .guestbook-form textarea::placeholder { font-size: 15px; color: #786e64; }
-.guestbook-form button { background: #806c5b; border-radius: 6px; font-size: 18px; min-height: 54px; }
-.guestbook-list li { background: #faf7f1; border-color: #e4dbce; }
+.guestbook-form input::placeholder, .guestbook-form textarea::placeholder { font-size: 15px; color: #66735f; }
+.guestbook-form button { background: #5d7559; border-radius: 6px; font-size: 18px; min-height: 54px; }
+.guestbook-list li { background: #f5f8f1; border-color: #d8e2d0; }
 .guestbook-list strong, .guestbook-list p { font-size: 17px; }
-.guestbook-list time { font-size: 14px; color: #756a60; }
-.guestbook-more, .gift-group summary { background: #f1ebe2; color: var(--accent); font-size: 17px; }
-.gift-group[open] { background: #faf7f1; }
+.guestbook-list time { font-size: 14px; color: #626f5c; }
+.guestbook-more, .gift-group summary { background: #eaf0e4; color: var(--accent); font-size: 17px; }
+.gift-group[open] { background: #f5f8f1; }
 .gift-account { font-size: 17px; }
 .gift-accounts { padding-inline: 12px; }
 .gift-bank { gap: 8px; }

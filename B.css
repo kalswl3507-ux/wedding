@@ -203,15 +203,15 @@
         .guestbook-form button:disabled { opacity: .7; cursor: default; }
         .guestbook-status, .navigation-status { font-size: .8rem; color: #777; line-height: 1.8; }
         .guestbook-list { list-style: none; padding: 0; margin-top: 28px; text-align: left; }
-        .guestbook-list li { margin-bottom: 14px; padding: 18px; border: 1px solid #d8e2d0; background: #f5f8f1; border-radius: 6px; overflow-wrap: anywhere; }
+        .guestbook-list li { margin-bottom: 14px; padding: 18px; border: 1px solid #e7dccc; background: #faf6ef; border-radius: 6px; overflow-wrap: anywhere; }
         .guestbook-list strong { color: var(--accent); font-size: .9rem; }
         .guestbook-list p { white-space: pre-wrap; line-height: 1.8; font-size: .9rem; color: #444; }
         .guestbook-list time { font-size: .75rem; color: #999; }
-        .guestbook-more { min-height: 44px; padding: 10px 24px; border: 1px solid #cddac5; border-radius: 6px; background: #eaf0e4; color: #4e6253; font: inherit; font-size: .85rem; cursor: pointer; }
+        .guestbook-more { min-height: 44px; padding: 10px 24px; border: 1px solid #e0d2be; border-radius: 6px; background: #f1e8dc; color: #77624e; font: inherit; font-size: .85rem; cursor: pointer; }
         .guestbook-more:disabled { opacity: .6; cursor: wait; }
         .wedding-calendar { margin: 65px 0 75px; }
         .wedding-calendar .section-title { margin: 24px 0 20px; }
-        .wedding-calendar .date { font-size: .95rem; line-height: 1.8; background: #eaf0e4; border-radius: 0; padding: 16px 12px; color: #4e6253;  }
+        .wedding-calendar .date { font-size: .95rem; line-height: 1.8; background: #f1e8dc; border-radius: 0; padding: 16px 12px; color: #77624e;  }
         .calendar-table .wedding-week td { vertical-align: top; padding-top: 5px; padding-bottom: 34px; }
         .calendar-table .wedding-date-cell { position: relative; }
         .calendar-table .calendar-time { position: absolute; top: 41px; left: 50%; transform: translateX(-50%); display: block; width: auto; height: auto; margin: 0; color: #a95f78; font-size: 10px; line-height: 1.4; font-weight: 500; white-space: nowrap; }
@@ -243,15 +243,15 @@
         .gift-section { margin-top: 80px; }
         #giftTitle { letter-spacing: .04em; }
         .gift-group { text-align: left; margin-bottom: 12px; }
-        .gift-group summary { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; background: #eaf0e4; border-radius: 12px; color: #4e6253; font-size: .95rem; font-weight: 500; cursor: pointer; list-style: none; }
+        .gift-group summary { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; background: #f1e8dc; border-radius: 12px; color: #77624e; font-size: .95rem; font-weight: 500; cursor: pointer; list-style: none; }
         .gift-group summary::-webkit-details-marker { display: none; }
         .gift-group summary::after { content: ''; width: 7px; height: 7px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg); margin: 0 5px 4px 12px; }
         .gift-group[open] summary::after { transform: rotate(225deg); margin-bottom: -4px; }
         .gift-group summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-        .gift-group[open] { background: #f5f8f1; border-radius: 12px; }
+        .gift-group[open] { background: #faf6ef; border-radius: 12px; }
         .gift-group[open] summary { border-radius: 12px 12px 0 0; }
         .gift-accounts { list-style: none; margin: 0; padding: 0 16px 8px; }
-        .gift-account + .gift-account { border-top: 1px solid rgba(80, 108, 73, .18); }
+        .gift-account + .gift-account { border-top: 1px solid rgba(133, 107, 76, .18); }
         .gift-group .account-copy { background: transparent; }
         .gift-account { padding: 16px 0; font-size: .9rem; line-height: 1.8; overflow-wrap: anywhere; }
         .gift-person { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
@@ -266,14 +266,14 @@
         .copy-status:empty { display: none; }
 
 /* B: formal invitation, immediate entry, generous type and touch targets. */
-:root { --accent: #4e6253; }
-body, html { background: #f7f9f5; color: #343d35; }
+:root { --accent: #77624e; }
+body, html { background: #faf7f2; color: #443c35; }
 .fade-in-page { opacity: 1; animation: none; }
 .wrapper { max-width: 560px; padding: 0 16px 40px; }
-.content-box { padding: 32px 24px 64px; background: #fffffc; }
-.eyebrow { margin: 0 0 16px; color: #5d715e; font-size: 15px; letter-spacing: .12em; }
-.title { font-family: Georgia, 'Batang', serif; font-size: 30px; letter-spacing: .06em; margin: 0 0 28px; }
-.section-title, .gallery-header h3 { font-family: Georgia, 'Batang', serif; font-size: 23px; font-weight: 600; }
+.content-box { padding: 32px 24px 64px; background: #fffdf9; }
+.eyebrow { margin: 0 0 16px; color: #806d59; font-size: 15px; letter-spacing: .12em; }
+.title { font-family: 'Noto Serif KR', serif; font-size: 29px; font-weight: 500; letter-spacing: -.025em; margin: 0 0 28px; }
+.section-title, .gallery-header h3 { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 500; letter-spacing: .015em; }
 .invitation-details { font-size: 17px; line-height: 2; margin: 0 0 28px; }
 .couple-introduction { gap: 28px; margin-bottom: 20px; }
 .couple-photo { display: block; width: 100%; height: auto; }
@@ -281,35 +281,35 @@ body, html { background: #f7f9f5; color: #343d35; }
 .names small { font-size: 14px; font-weight: 400; }
 .person-phone { width: 48px; height: 48px; }
 .quick-links { display: flex; justify-content: center; gap: 10px; margin: 20px 0 56px; }
-.quick-links a { padding: 12px 14px; border: 1px solid #d1ddcd; border-radius: 6px; font-size: 16px; text-decoration: none; color: var(--accent); }
+.quick-links a { padding: 12px 14px; border: 1px solid #e1d5c5; border-radius: 6px; font-size: 16px; text-decoration: none; color: var(--accent); }
 .message { font-size: 17px; font-weight: 400; line-height: 2.2; margin-bottom: 32px; }
 .family-names { padding: 20px 0; font-size: 17px; line-height: 2; }
 .family-names p { margin: 6px 0; }
-.family-names span { margin: 0 9px; font-size: 14px; color: #606c5e; }
-.wedding-calendar .date { background: #edf2e9; color: var(--accent); border-radius: 8px; font-size: 17px; line-height: 2; padding: 18px; }
+.family-names span { margin: 0 9px; font-size: 14px; color: #7b6d5e; }
+.wedding-calendar .date { background: #f3ede3; color: var(--accent); border-radius: 8px; font-size: 17px; line-height: 2; padding: 18px; }
 .calendar-table { font-size: 17px; }
 .calendar-table th { font-size: 15px; }
 .calendar-table td { height: 48px; }
-.calendar-table .wedding-day { color: white; background: #657e62; border-radius: 50%; width: 36px; height: 36px; }
-.calendar-table .calendar-time { font-size: 12px; color: #4d684c; top: 44px; }
+.calendar-table .wedding-day { color: white; background: #897259; border-radius: 50%; width: 36px; height: 36px; }
+.calendar-table .calendar-time { font-size: 12px; color: #796047; top: 44px; }
 .calendar-table .wedding-week td { padding-bottom: 42px; }
 .calendar-table th:first-child { color: #a25852; }
 .main-photo-area { height: auto; aspect-ratio: 3 / 4; }
-.gallery-controls, .address, .navigation-links a, .guestbook-status, .navigation-status { font-size: 16px; color: #586554; }
+.gallery-controls, .address, .navigation-links a, .guestbook-status, .navigation-status { font-size: 16px; color: #746656; }
 .thumb-btn { flex-basis: 84px; height: 84px; }
 .location { font-size: 19px; }
 .venue-phone { flex-basis: 48px; }
-.transit-guide, .transit-guide .bus-routes { font-size: 16px; color: #414b40; }
+.transit-guide, .transit-guide .bus-routes { font-size: 16px; color: #4d443b; }
 .transit-guide h4 { font-size: 18px; }
-.guestbook-form label, .gift-role { font-size: 16px; color: #52624f; }
+.guestbook-form label, .gift-role { font-size: 16px; color: #71614f; }
 .guestbook-form input, .guestbook-form textarea { font-size: 17px; }
-.guestbook-form input::placeholder, .guestbook-form textarea::placeholder { font-size: 15px; color: #66735f; }
-.guestbook-form button { background: #5d7559; border-radius: 6px; font-size: 18px; min-height: 54px; }
-.guestbook-list li { background: #f5f8f1; border-color: #d8e2d0; }
+.guestbook-form input::placeholder, .guestbook-form textarea::placeholder { font-size: 15px; color: #7e7160; }
+.guestbook-form button { background: #80694f; border-radius: 6px; font-size: 18px; min-height: 54px; }
+.guestbook-list li { background: #faf6ef; border-color: #e7dccc; }
 .guestbook-list strong, .guestbook-list p { font-size: 17px; }
-.guestbook-list time { font-size: 14px; color: #626f5c; }
-.guestbook-more, .gift-group summary { background: #eaf0e4; color: var(--accent); font-size: 17px; }
-.gift-group[open] { background: #f5f8f1; }
+.guestbook-list time { font-size: 14px; color: #7a6b59; }
+.guestbook-more, .gift-group summary { background: #f1e8dc; color: var(--accent); font-size: 17px; }
+.gift-group[open] { background: #faf6ef; }
 .gift-account { font-size: 17px; }
 .gift-accounts { padding-inline: 12px; }
 .gift-bank { gap: 8px; }
@@ -321,5 +321,41 @@ body, html { background: #f7f9f5; color: #343d35; }
  .content-box { padding: 28px 14px 50px; }
  .names { font-size: 21px; gap: 6px; }
  .message { font-size: 16px; }
- .family-names { font-size: 16px; }
+.family-names { font-size: 16px; }
+}
+
+/* Photograph first; restrained Korean serif typography for the hanbok edition. */
+.cover-photo { width: 100%; max-width: 560px; margin: 0 auto; }
+.cover-photo img { display: block; width: 100%; height: auto; }
+.music-toolbar { max-width: 560px; padding: 8px 20px 0; }
+.eyebrow { font-family: 'Noto Serif KR', serif; font-weight: 400; font-size: 14px; letter-spacing: .04em; margin-bottom: 22px; }
+.message { font-family: 'Noto Serif KR', serif; font-weight: 400; font-size: 17px; line-height: 2.25; letter-spacing: -.035em; }
+.names { font-family: 'Noto Serif KR', serif; font-weight: 500; }
+.family-names { font-family: 'Noto Serif KR', serif; }
+.family-names strong { font-weight: 500; }
+.gallery-header::before, .gift-section::before, .guestbook::before { display: none; }
+.soft-divider { display: block; width: 100%; height: auto; margin: 0 auto 36px; overflow: hidden; }
+.gallery-header .soft-divider { opacity: .8; }
+.gift-section .soft-divider { opacity: .65; }
+.guestbook .soft-divider { opacity: .8; }
+@media (max-width: 360px) { .message { font-size: 16px; } }
+
+/* Supplied floral title frame, with live Korean text for accessibility. */
+.section-title, .gallery-header h3, .wedding-calendar .section-title {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    max-width: 360px;
+    min-height: 100px;
+    margin: 0 auto 28px;
+    padding: 25px 28px;
+    background: url('B_style/title.png') center / 100% auto no-repeat;
+    font-size: 19px;
+    line-height: 1.6;
+    letter-spacing: -.02em;
+}
+.calendar-month { margin: 28px 0 20px; font-family: 'Noto Serif KR', serif; font-size: 20px; color: var(--accent); }
+.wedding-calendar .date { font-size: 16px; }
+@media (max-width: 360px) {
+    .section-title, .gallery-header h3, .wedding-calendar .section-title { font-size: 17px; min-height: 90px; }
 }

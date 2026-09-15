@@ -1,11 +1,11 @@
-// Recorded Chopin Op. 9 No. 2; source and license: assets/audio/README.md.
+// Daystar — Daisy Fleabane. Used with permission; see assets/audio/README.md.
 (() => {
     'use strict';
     const button = document.getElementById('musicToggle');
     const label = document.getElementById('musicLabel');
     const track = new Audio();
     track.preload = 'none';
-    track.src = 'assets/audio/wedding-piano.mp3';
+    track.src = 'assets/audio/daystar-daisy-fleabane.mp3';
     track.loop = true;
     track.volume = .35;
     let enabled = false;

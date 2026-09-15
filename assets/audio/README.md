@@ -1,14 +1,10 @@
 # Invitation music
 
-Track: Frédéric Chopin — Nocturne in E-flat major, Op. 9 No. 2.
-Recording: Musopen collection, `Nocturne Op. 9 no. 2 in E flat major.mp3`.
-Collection: https://archive.org/details/musopen-chopin
-Source: https://archive.org/download/musopen-chopin/Nocturne%20Op.%209%20no.%202%20in%20E%20flat%20major.mp3
-License: CC0 1.0, declared at https://archive.org/metadata/musopen-chopin
-License text: https://creativecommons.org/publicdomain/zero/1.0/
-Downloaded 2026-09-15. Recording is unmodified.
+Current track: 샛별(Daystar) – 계란꽃 (Daisy Fleabane).
+Source: https://www.youtube.com/watch?v=YFMhXdWpMBM
+The user confirmed permission for this wedding invitation on 2026-09-16 and supplied the downloaded MP3. Copyright remains with Daystar; this recording is not CC0. Original audio is used unchanged. Attribution and source link appear in the invitation footer.
 
-The local MP3 plays only after the visitor enables music. Default is OFF on
-every page load. The top button pauses/resumes playback. To replace the music,
-replace `wedding-piano.mp3` and update these credits. Volume is set in
-`/music.js`; some phones use system volume instead.
+Playback: assets/audio/daystar-daisy-fleabane.mp3, controlled by /music.js.
+Music starts OFF on each page load and plays only after the top music button is pressed. Leaving the page pauses playback.
+
+Previous recording (no longer selected): wedding-piano.mp3, Chopin Op.9 No.2 from the Musopen collection, https://archive.org/details/musopen-chopin (CC0 declared in collection metadata).

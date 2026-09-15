@@ -23,6 +23,8 @@
     <style>
         :root { --accent: #635b58; }
         * { box-sizing: border-box; }
+        .music-credit { margin: 48px 0 0; font-size: 11px; line-height: 1.8; color: #998a84; }
+        .music-credit a { color: inherit; text-underline-offset: 3px; }
         .music-toolbar { width: 100%; max-width: 520px; margin: 0 auto; padding: 4px 12px; display: flex; justify-content: flex-end; }
         .music-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-width: 44px; min-height: 44px; padding: 0 8px; border: 0; background: transparent; color: var(--accent); cursor: pointer; font: inherit; font-size: 11px; letter-spacing: .04em; }
         .music-toggle svg { width: 23px; height: 23px; }
@@ -429,6 +431,7 @@
                     <p class="guestbook-status" id="guestbookStatus" role="status"></p>
                     <ul class="guestbook-list" id="guestbookList"></ul>
                 </section>
+                <p class="music-credit">Music · <a href="https://www.youtube.com/watch?v=YFMhXdWpMBM" target="_blank" rel="noopener noreferrer">샛별(Daystar) – 계란꽃</a></p>
             </div>
         </div>
     </div>
@@ -593,6 +596,6 @@
     <script src="guestbook.js"></script>
     <script src="navigation.js"></script>
     <script src="accounts.js"></script>
-    <script src="music.js"></script>
+    <script src="music.js?v=daystar-1"></script>
 </body>
 </html>

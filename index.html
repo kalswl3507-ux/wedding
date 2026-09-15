@@ -366,7 +366,7 @@
 
                 <div class="gallery-container">
                     <div class="main-photo-area" aria-label="웨딩 사진 자동 슬라이드">
-                        <div class="slide-photo visible"><img src="gallery/1.jpg" alt="웨딩 사진 1" loading="lazy"></div>
+                        <div class="slide-photo visible"></div>
                         <div class="slide-photo" aria-hidden="true"></div>
                     </div>
                     <div class="gallery-controls">
@@ -488,10 +488,10 @@
             container.classList.toggle('landscape', landscape.has(index));
             photos[index].forEach(number => {
                 const img = document.createElement('img');
-                img.src = source(number);
                 img.alt = `웨딩 사진 ${number}`;
                 if (lazy) img.loading = 'lazy';
                 img.decoding = 'async';
+                img.src = source(number);
                 container.append(img);
             });
         }
@@ -515,7 +515,7 @@
             return loaded.get(index);
         }
 
-        photos.forEach((numbers, index) => {
+        function createThumbnails() { photos.forEach((numbers, index) => {
             const button = document.createElement('button');
             button.type = 'button';
             button.className = 'thumb-btn' + (index === 0 ? ' active' : '');
@@ -523,7 +523,7 @@
             renderPhoto(button, index, true);
             button.addEventListener('click', () => openPopup(index, button));
             thumbs.append(button);
-        });
+        }); }
         function stopSlideshow() {
             clearTimeout(timer);
             generation++;
@@ -601,8 +601,10 @@
             touchStart = null;
         }, { passive: true });
         document.addEventListener('visibilitychange', scheduleSlide);
-        function startGallery() { preload(0).then(() => {
-            layers[0].classList.toggle('landscape', landscape.has(0));
+        function startGallery() {
+            createThumbnails();
+            preload(0).then(() => {
+            renderPhoto(layers[0], 0);
             scheduleSlide();
         }); }
         if (document.documentElement.classList.contains('invitation-locked')) document.addEventListener('invitation:enter', startGallery, { once: true });

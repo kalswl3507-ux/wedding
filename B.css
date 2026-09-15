@@ -382,3 +382,5 @@ body, html { background: #faf7f2; color: #443c35; }
     font-size: 18px;
     line-height: 1.5;
 }
+
+.wedding-calendar > .line-4:last-child { margin: 40px auto 0; }

@@ -233,6 +233,8 @@
         .guestbook-list strong { color: var(--accent); font-size: .9rem; }
         .guestbook-list p { white-space: pre-wrap; line-height: 1.8; font-size: .9rem; color: #444; }
         .guestbook-list time { font-size: .75rem; color: #999; }
+        .guestbook-more { min-height: 44px; padding: 10px 24px; border: 1px solid #e8cbd4; border-radius: 6px; background: #fff0f3; color: #75545d; font: inherit; font-size: .85rem; cursor: pointer; }
+        .guestbook-more:disabled { opacity: .6; cursor: wait; }
         .wedding-calendar { margin: 65px 0 75px; }
         .wedding-calendar .section-title { margin: 24px 0 20px; }
         .wedding-calendar .date { font-size: .95rem; line-height: 1.8; background: #fff0f3; border-radius: 0; padding: 16px 12px; color: #75545d; clip-path: polygon(8px 0, calc(100% - 8px) 0, calc(100% - 8px) 4px, calc(100% - 4px) 4px, calc(100% - 4px) 8px, 100% 8px, 100% calc(100% - 8px), calc(100% - 4px) calc(100% - 8px), calc(100% - 4px) calc(100% - 4px), calc(100% - 8px) calc(100% - 4px), calc(100% - 8px) 100%, 8px 100%, 8px calc(100% - 4px), 4px calc(100% - 4px), 4px calc(100% - 8px), 0 calc(100% - 8px), 0 8px, 4px 8px, 4px 4px, 8px 4px); }
@@ -602,8 +604,8 @@
         if (document.documentElement.classList.contains('invitation-locked')) document.addEventListener('invitation:enter', startGallery, { once: true });
         else startGallery();
     </script>
-    <script src="site-config.js"></script>
-    <script src="guestbook.js"></script>
+    <script src="site-config.js?v=supabase-1"></script>
+    <script src="guestbook.js?v=supabase-1"></script>
     <script src="navigation.js"></script>
     <script src="accounts.js"></script>
     <script src="music.js?v=daystar-skip5"></script>

@@ -8,3 +8,4 @@ Playback: assets/audio/daystar-daisy-fleabane.mp3, controlled by /music.js.
 Music starts OFF on each page load and plays only after the top music button is pressed. Leaving the page pauses playback.
 
 Previous recording (no longer selected): wedding-piano.mp3, Chopin Op.9 No.2 from the Musopen collection, https://archive.org/details/musopen-chopin (CC0 declared in collection metadata).
+Playback skips the first 5 seconds on initial play and each repeat; the supplied MP3 file remains unchanged.

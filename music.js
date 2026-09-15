@@ -5,11 +5,20 @@
     const label = document.getElementById('musicLabel');
     const track = new Audio();
     track.preload = 'none';
-    track.src = 'assets/audio/daystar-daisy-fleabane.mp3';
-    track.loop = true;
+    const startAt = 5;
+    track.src = 'assets/audio/daystar-daisy-fleabane.mp3#t=5';
+    track.loop = false;
     track.volume = .35;
     let enabled = false;
     let request = 0;
+    track.addEventListener('loadedmetadata', () => {
+        if (track.currentTime < startAt && track.duration > startAt) track.currentTime = startAt;
+    });
+    track.addEventListener('ended', () => {
+        if (track.duration <= startAt) return;
+        track.currentTime = startAt;
+        if (enabled && !document.hidden) play();
+    });
     function paint() {
         button.setAttribute('aria-pressed', String(enabled));
         button.setAttribute('aria-label', enabled ? '배경음악 끄기' : '배경음악 켜기');
@@ -19,6 +28,7 @@
     async function play() {
         const current = ++request;
         try {
+            if (track.readyState > 0 && track.currentTime < startAt && track.duration > startAt) track.currentTime = startAt;
             await track.play();
             if (!enabled || document.hidden) track.pause();
         } catch (error) {

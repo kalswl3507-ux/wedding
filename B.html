@@ -21,7 +21,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="B.css?v=still-ending-1">
+    <link rel="stylesheet" href="B.css?v=vertical-lettering-1">
 </head>
 <body>
     <div class="music-toolbar">
@@ -32,7 +32,10 @@
     </div>
     <header class="cover-photo">
         <video id="coverVideo" autoplay muted playsinline preload="auto" poster="assets/B-main-poster.jpg" width="720" height="1280" aria-label="신랑 신부의 청첩장 영상"><source src="assets/B-main.mp4" type="video/mp4"></video>
-        <img id="coverStill" class="cover-still" src="assets/B-cover-12.jpg" width="1000" height="1500" alt="" decoding="async">
+        <div class="cover-lettering" aria-label="최호진 · 김채나 결혼합니다.">
+            <p class="cover-names" aria-hidden="true"><span style="--letter:0">최</span><span style="--letter:1">호</span><span style="--letter:2">진</span><span class="cover-name-dot" style="--letter:3">·</span><span style="--letter:4">김</span><span style="--letter:5">채</span><span style="--letter:6">나</span></p>
+            <p class="cover-vow" aria-hidden="true"><span style="--letter:5">결</span><span style="--letter:6">혼</span><span style="--letter:7">합</span><span style="--letter:8">니</span><span style="--letter:9">다</span><span style="--letter:10">.</span></p>
+        </div>
         <button type="button" class="cover-play" id="coverPlay" hidden>영상 재생</button>
     </header>
 
@@ -343,6 +346,6 @@
     <script src="navigation.js"></script>
     <script src="accounts.js"></script>
     <script src="B-music.js?v=1"></script>
-    <script src="B-video.js?v=still-ending-1"></script>
+    <script src="B-video.js?v=last-frame-1"></script>
 </body>
 </html>

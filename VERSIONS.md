@@ -8,5 +8,5 @@
 - B 음악은 `B-music.js`와 `assets/audio/sakura-romance.mp3`이며 처음부터 재생합니다. 초기 상태는 꺼짐입니다. A의 음악과 독립적입니다.
 - B 공유 썸네일은 `assets/share-gallery-12-close.jpg` (12번 확대), A는 기존 2번 사진입니다.
 - B 본문은 베이지 포인트와 Noto Serif KR 제목/초대 문구를 사용합니다. `B_style/title.png`, `line.png`, `linespng.png`, `flower.png`는 사용자 제공 장식입니다.
-- B 첫 화면은 `B-video.js`가 제어하는 무음 영상입니다. 페이지를 열 때 한 번만 재생하고 영상의 마지막 장면에서 멈춥니다. 사진으로 전환하지 않습니다. 원본은 `B_style/Main.mp4`, 배포용은 `assets/B-main.mp4`입니다. 자동재생이 차단되면 영상 재생 버튼을 표시합니다.
+- B 첫 화면은 `B-video.js`가 제어하는 무음 영상입니다. 페이지를 열 때 한 번만 재생하고 영상의 마지막 장면에서 멈춥니다. 사진으로 전환하지 않습니다. 원본은 `B_style/Main.mp4`, 배포용은 `assets/B-main-hd.mp4`입니다. 자동재생이 차단되면 영상 재생 버튼을 표시합니다.
 - 방명록은 같은 저장소이므로 A와 B 방문자가 같은 글을 봅니다. 예식 및 계좌 정보는 각 HTML에 있어 변경할 때 양쪽을 확인해야 합니다.

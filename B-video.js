@@ -17,7 +17,7 @@
     button.addEventListener('click', play);
     video.addEventListener('playing', () => { button.hidden = true; });
     video.addEventListener('ended', () => { finished = true; button.hidden = true; });
-    video.addEventListener('error', () => { button.hidden = true; video.poster = 'assets/B-main-poster.jpg'; });
+    video.addEventListener('error', () => { button.hidden = true; video.poster = 'assets/B-main-poster-hd.jpg'; });
     const observer = new IntersectionObserver(entries => {
         visible = entries[0].isIntersecting;
         if (visible) play(); else video.pause();

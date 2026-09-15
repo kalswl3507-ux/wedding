@@ -227,8 +227,16 @@
         .location { line-height: 1.8; word-break: keep-all; }
         .guestbook-status:empty, .navigation-status:empty { display: none; }
         .wedding-calendar, .gallery-header, .info, .guestbook, .gift-section {
-            border-top: 1px solid #dbe3d7;
-            padding-top: 48px;
+            border-top: 0;
+            padding-top: 0;
+        }
+        .wedding-calendar::before, .gallery-header::before, .info::before, .guestbook::before, .gift-section::before {
+            content: '';
+            display: block;
+            height: 32px;
+            margin: 0 0 36px;
+            background: url('B_style/line.png') center / 100% auto no-repeat;
+            pointer-events: none;
         }
         #directionsTitle { letter-spacing: .04em; }
         .calendar-table, .gallery-controls { font-variant-numeric: tabular-nums; }

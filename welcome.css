@@ -1,0 +1,21 @@
+.invitation-locked, .invitation-locked body { overflow: hidden; height: 100%; }
+.invitation-locked .welcome-screen { display: flex; }
+.welcome-screen { position: fixed; inset: 0; z-index: 10000; background: #fffaf7; align-items: center; justify-content: center; padding: 24px; overflow-y: auto; overscroll-behavior: contain; }
+.welcome-screen[hidden] { display: none; }
+.invitation-locked .welcome-screen[hidden] { display: flex; }
+.welcome-card { width: 100%; max-width: 360px; margin: auto; text-align: center; color: #655451; }
+.welcome-kicker { font: 12px/1.5 monospace; letter-spacing: .18em; margin: 0 0 38px; }
+.welcome-envelope { width: 120px; height: 96px; display: block; margin: 0 auto 30px; }
+.welcome-card h1 { font-size: clamp(18px, 5vw, 22px); line-height: 1.7; font-weight: 600; letter-spacing: -.04em; margin: 0; word-break: keep-all; }
+.welcome-heart { display: block; color: #c7758d; font-size: 26px; margin-top: 4px; }
+.welcome-names { font-size: 15px; letter-spacing: .12em; margin: 20px 0 8px; }
+.welcome-date { font: 13px/1.6 monospace; letter-spacing: .12em; margin: 0 0 36px; }
+.welcome-progress { width: 144px; height: 8px; margin: 0 auto; padding: 2px; background: #f0dfdf; }
+.welcome-progress span { display: block; height: 4px; width: 0; background: #c98095; transition: width .15s steps(4); }
+.welcome-status { min-height: 36px; font-size: 12px; line-height: 1.6; margin: 12px 0 18px; color: #907e79; }
+.welcome-enter { border: 0; background: #715b59; color: #fffaf7; font: inherit; font-size: 14px; font-weight: 500; min-height: 48px; width: 240px; max-width: 100%; padding: 12px; cursor: pointer; clip-path: polygon(4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% calc(100% - 4px),calc(100% - 4px) calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px),0 4px,4px 4px); }
+.welcome-enter:disabled { background: #d8c9c4; color: #76645e; cursor: wait; }
+.welcome-enter:focus-visible { outline: 3px solid #c7758d; outline-offset: -5px; }
+.welcome-skip { display: block; margin: 12px auto 0; border: 0; padding: 12px; background: transparent; color: #907e79; font: inherit; font-size: 12px; text-decoration: underline; }
+.welcome-skip[hidden] { display: none; }
+@media (prefers-reduced-motion: reduce) { .welcome-progress span { transition: none; } }

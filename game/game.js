@@ -55,7 +55,7 @@
   let assetsReady=false;
   const startButton=document.getElementById('startButton');
   startButton.disabled=true;pixelLabel(startButton,'LOADING...');
-  WeddingArt.ready.then(()=>{assetsReady=true;startButton.disabled=false;pixelLabel(startButton,'TAP TO START');if(WeddingArt.failed.length)document.getElementById('instruction').textContent='일부 이미지를 불러오지 못했어요. 새로고침해 주세요.';});
+  WeddingArt.ready.then(()=>{assetsReady=true;startButton.disabled=false;pixelLabel(startButton,'TAP TO START');if(WeddingArt.failed.length)document.getElementById('instruction').textContent='일부 이미지를 불러오지 못했어요. 새로고침해 주세요.';window.parent.postMessage({type:'wedding:loading',loaded:1,total:1,ready:true,failed:WeddingArt.failed.length},'*');});
   function begin(){
     if(!assetsReady)return;
     unlockAudio();if(state.mode!=='ready')return;

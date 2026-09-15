@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>저희 결혼합니다</title>
+    <meta name="description" content="최호진 ♥ 김채나 — 2027년 1월 10일 일요일 오후 3시 40분, 신도림 라마다 호텔 14F 하늘정원홀">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="최호진 ♥ 김채나, 저희 결혼합니다">
+    <meta property="og:description" content="2027년 1월 10일 일요일 오후 3시 40분 · 신도림 라마다 호텔 14F 하늘정원홀">
+    <meta property="og:url" content="https://kalswl3507-ux.github.io/wedding/">
+    <meta property="og:image" content="https://kalswl3507-ux.github.io/wedding/gallery/2.jpg">
+    <meta property="og:image:alt" content="최호진과 김채나의 웨딩 사진">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="최호진 ♥ 김채나, 저희 결혼합니다">
+    <meta name="twitter:image" content="https://kalswl3507-ux.github.io/wedding/gallery/2.jpg">
+    <script>document.documentElement.classList.add('invitation-locked');</script>
+    <link rel="stylesheet" href="welcome.css">
+    <script defer src="welcome.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -261,6 +274,19 @@
     </style>
 </head>
 <body>
+    <section class="welcome-screen" id="welcomeScreen" aria-labelledby="welcomeTitle" hidden>
+        <div class="welcome-card">
+            <p class="welcome-kicker">A LETTER FOR YOU</p>
+            <svg class="welcome-envelope" viewBox="0 0 80 64" shape-rendering="crispEdges" aria-hidden="true"><path fill="#6c5c59" d="M4 16h72v4h4v40h-4v4H4v-4H0V20h4Z"/><path fill="#fffaf5" d="M4 20h72v40H4Z"/><path fill="#eadbd4" d="M4 20h8v4h8v4h8v4h8v4h8v-4h8v-4h8v-4h8v-4h8v8h-8v4h-8v4h-8v4H28v-4h-8v-4h-8v-4H4Z"/><path fill="#e89eaf" d="M28 0h8v4h8V0h8v4h4v12h-4v4h-4v4h-4v4h-8v-4h-4v-4h-4v-4h-4V4h4Z"/></svg>
+            <h1 id="welcomeTitle">초대장이 도착했습니다!<span class="welcome-heart">♡</span></h1>
+            <p class="welcome-names">최호진 · 김채나</p>
+            <p class="welcome-date">2027. 01. 10</p>
+            <div class="welcome-progress" role="progressbar" aria-label="초대장 준비" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="welcomeProgress"></span></div>
+            <p class="welcome-status" id="welcomeStatus" role="status">두 사람의 이야기를 준비하고 있어요…</p>
+            <button class="welcome-enter" id="welcomeEnter" type="button" disabled>잠시만 기다려 주세요</button>
+            <button class="welcome-skip" id="welcomeSkip" type="button" hidden>청첩장 먼저 보기</button>
+        </div>
+    </section>
     <div class="music-toolbar">
         <button class="music-toggle" id="musicToggle" type="button" aria-label="배경음악 켜기" aria-pressed="false">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4 6 8H3v8h3l5 4Z"/><path class="sound-off" d="m16 9 6 6m0-6-6 6"/><g class="sound-waves"><path d="M15 8a6 6 0 0 1 0 8M18 4a11 11 0 0 1 0 16"/></g></svg>
@@ -322,7 +348,7 @@
 
                 <div class="gallery-container">
                     <div class="main-photo-area" aria-label="웨딩 사진 자동 슬라이드">
-                        <div class="slide-photo visible"><img src="gallery/1.jpg" alt="웨딩 사진 1"></div>
+                        <div class="slide-photo visible"><img src="gallery/1.jpg" alt="웨딩 사진 1" loading="lazy"></div>
                         <div class="slide-photo" aria-hidden="true"></div>
                     </div>
                     <div class="gallery-controls">
@@ -361,30 +387,30 @@
                     <details class="gift-group">
                         <summary>신랑측</summary>
                         <ul class="gift-accounts">
-                            <li class="gift-account" data-person="groom">
-                                <div class="gift-person"><span class="gift-role">신랑</span><strong class="gift-name">최호진</strong></div>
-                                <div class="gift-bank"><span>국민 <span class="account-number">050702-04-123401</span></span><button type="button" class="account-copy" aria-label="신랑 계좌번호 복사" title="계좌번호 복사"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg></button></div><p class="copy-status" role="status"></p>
-                            </li>
                             <li class="gift-account" data-person="groom-father">
-                                <div class="gift-person"><span class="gift-role">신랑 아버지</span><strong class="gift-name"></strong></div>
+                                <div class="gift-person"><span class="gift-role">신랑 아버지</span><strong class="gift-name">최희봉</strong></div>
                                 <div class="gift-bank"><span>우리 <span class="account-number">131-08-025685</span></span><button type="button" class="account-copy" aria-label="신랑 아버지 계좌번호 복사" title="계좌번호 복사"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg></button></div><p class="copy-status" role="status"></p>
                             </li>
                             <li class="gift-account" data-person="groom-mother">
-                                <div class="gift-person"><span class="gift-role">신랑 어머니</span><strong class="gift-name"></strong></div>
+                                <div class="gift-person"><span class="gift-role">신랑 어머니</span><strong class="gift-name">김은희</strong></div>
                                 <div class="gift-bank"><span>국민 <span class="account-number">672725-96-101904</span></span><button type="button" class="account-copy" aria-label="신랑 어머니 계좌번호 복사" title="계좌번호 복사"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg></button></div><p class="copy-status" role="status"></p>
+                            </li>
+                            <li class="gift-account" data-person="groom">
+                                <div class="gift-person"><span class="gift-role">신랑</span><strong class="gift-name">최호진</strong></div>
+                                <div class="gift-bank"><span>국민 <span class="account-number">050702-04-123401</span></span><button type="button" class="account-copy" aria-label="신랑 계좌번호 복사" title="계좌번호 복사"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg></button></div><p class="copy-status" role="status"></p>
                             </li>
                         </ul>
                     </details>
                     <details class="gift-group">
                         <summary>신부측</summary>
                         <ul class="gift-accounts">
-                            <li class="gift-account" data-person="bride-mother">
-                                <div class="gift-person"><span class="gift-role">신부 어머니</span><strong class="gift-name">정미경</strong></div>
-                                <div class="gift-bank"><span>기업 <span class="account-number">942-006-74-101017</span></span><button type="button" class="account-copy" aria-label="신부 어머니 계좌번호 복사" title="계좌번호 복사"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg></button></div><p class="copy-status" role="status"></p>
-                            </li>
                             <li class="gift-account" data-person="bride-father">
                                 <div class="gift-person"><span class="gift-role">신부 아버지</span><strong class="gift-name">김강원</strong></div>
                                 <div class="gift-bank"><span>기업 <span class="account-number">942-0068-37-01014</span></span><button type="button" class="account-copy" aria-label="신부 아버지 계좌번호 복사" title="계좌번호 복사"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg></button></div><p class="copy-status" role="status"></p>
+                            </li>
+                            <li class="gift-account" data-person="bride-mother">
+                                <div class="gift-person"><span class="gift-role">신부 어머니</span><strong class="gift-name">정미경</strong></div>
+                                <div class="gift-bank"><span>기업 <span class="account-number">942-006-74-101017</span></span><button type="button" class="account-copy" aria-label="신부 어머니 계좌번호 복사" title="계좌번호 복사"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg></button></div><p class="copy-status" role="status"></p>
                             </li>
                             <li class="gift-account" data-person="bride">
                                 <div class="gift-person"><span class="gift-role">신부</span><strong class="gift-name">김채나</strong></div>
@@ -486,7 +512,7 @@
 
         function scheduleSlide() {
             stopSlideshow();
-            if (dialog.open || document.hidden) return;
+            if (dialog.open || document.hidden || document.documentElement.classList.contains('invitation-locked')) return;
             preload((current + 1) % photos.length);
             timer = setTimeout(advanceSlide, 3000);
         }
@@ -556,10 +582,12 @@
             touchStart = null;
         }, { passive: true });
         document.addEventListener('visibilitychange', scheduleSlide);
-        preload(0).then(() => {
+        function startGallery() { preload(0).then(() => {
             layers[0].classList.toggle('landscape', landscape.has(0));
             scheduleSlide();
-        });
+        }); }
+        if (document.documentElement.classList.contains('invitation-locked')) document.addEventListener('invitation:enter', startGallery, { once: true });
+        else startGallery();
     </script>
     <script src="site-config.js"></script>
     <script src="guestbook.js"></script>

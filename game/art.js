@@ -56,8 +56,10 @@
   const files=['groom_run','groom_jump','groom_jumpdown','bride_waiting','bride_groom_meet','wedding','ending_ring','ending_kiss','castle','tree','trees','bushy','flowertree','cloud','floor_ground','floor_stone','floor_castle','stage1_back','stage2_back','stage3_back','flower','coin','yoso','mysterybox','ring'];
   files.push('heart_coin','ending_cheerup','stones','stones2');
   const images={},failed=[];
+  let settled=0;
+  function reportLoading(){window.parent.postMessage({type:'wedding:loading',loaded:++settled,total:files.length,ready:false},'*');}
   const ready=Promise.all(files.map(name=>new Promise(resolve=>{
-    const image=new Image();image.onload=()=>{images[name]=image;resolve();};image.onerror=()=>{failed.push(name);resolve();};image.src=`png/${name}.png?v=heart-pink-7`;
+    const image=new Image();image.onload=()=>{images[name]=image;reportLoading();resolve();};image.onerror=()=>{failed.push(name);reportLoading();resolve();};image.src=`png/${name}.png?v=heart-pink-7`;
   })));
   function sprite(ctx,name,x,feet,height,alpha=1){
     let file=name;

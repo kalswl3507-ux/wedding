@@ -262,8 +262,8 @@
         const bx=C.distance+202-camera;if(bx<530)sprite(ctx,'bride_waiting',bx,211,57);
       }
       if(state.mode!=='ready'){
-        for(let i=0;i<state.lives;i++)sprite(ctx,'groomFace',29+i*29,31,22);
-        lettering(ctx,'LIVES',16,35,1);
+        lettering(ctx,'HOJIN',16,13,2);
+        for(let i=0;i<state.lives;i++)sprite(ctx,'groomFace',92+i*24,31,20);
         const pop=type=>{const age=state.time-state.lastPickup[type];return age>=0&&age<.3?1+.2*Math.sin(age/.3*Math.PI):1;};
         sprite(ctx,'coin',166,29,20*pop('coin'));lettering(ctx,'×'+String(state.score).padStart(2,'0'),181,13,2);
         sprite(ctx,'ringIcon',240,31,22*pop('ring'),state.ringCollected?1:.3);

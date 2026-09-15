@@ -316,10 +316,10 @@ body, html { background: #faf7f2; color: #443c35; }
 }
 
 /* Photograph first; restrained Korean serif typography for the hanbok edition. */
-.cover-photo { width: 86%; max-width: 360px; max-width: min(360px, 36.5625svh); margin: 0 auto; }
+.cover-photo { width: 100%; max-width: 560px; aspect-ratio: 9 / 12; margin: 0 auto; }
 .cover-photo img { display: block; width: 100%; height: auto; }
 .cover-photo { position: relative; overflow: hidden; }
-.cover-photo video { display: block; width: 100%; height: auto; transform: none; }
+.cover-photo video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; transform: none; }
 .cover-play { position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); border: 1px solid #dfd1bf; border-radius: 24px; background: #fffdf9; color: #77624e; min-height: 48px; padding: 12px 24px; font: inherit; cursor: pointer; }
 .cover-play[hidden] { display: none; }
 .invitation-flower { display: block; width: 64px; height: auto; margin: 0 auto 30px; }
@@ -363,3 +363,27 @@ body, html { background: #faf7f2; color: #443c35; }
 .venue-single-line { white-space: nowrap; font-size: clamp(12px, 3.6vw, 16px); letter-spacing: -.04em; }
 .venue-heading { flex-wrap: wrap; }
 .venue-heading .venue-single-line { flex: 0 0 100%; }
+
+/* Nine-slice frames retain the supplied corner ornaments while fields resize. */
+.guestbook-form input, .guestbook-form textarea {
+    border: 18px solid transparent;
+    border-image: url('B_style/guestbook-input-frame.svg') 100 fill / 18px / 0 stretch;
+    border-radius: 0;
+    background: transparent;
+    padding: 5px 10px;
+    color: #514333;
+    min-height: 64px;
+}
+.guestbook-form textarea { min-height: 176px; padding-top: 6px; }
+.guestbook-form button {
+    min-height: 68px;
+    padding: 0 12px;
+    border: 22px solid transparent;
+    border-image: url('B_style/guestbook-button-frame.svg') 105 fill / 22px / 0 stretch;
+    border-radius: 0;
+    background: transparent;
+    color: #fffdf8;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    line-height: 1.5;
+}

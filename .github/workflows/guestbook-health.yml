@@ -1,0 +1,45 @@
+name: Guestbook health check
+
+on:
+  schedule:
+    - cron: '17 2,8,14,20 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check guestbook database (read only)
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const config = fs.readFileSync('site-config.js', 'utf8');
+          const url = config.match(/supabaseUrl:\s*'([^']+)'/)?.[1];
+          const key = config.match(/supabasePublishableKey:\s*'([^']+)'/)?.[1];
+          if (!url || !key) throw new Error('Guestbook configuration is missing.');
+          (async () => {
+            for (let attempt = 1; attempt <= 3; attempt++) {
+              try {
+                const response = await fetch(url.replace(/\/$/, '') + '/rest/v1/wedding_guestbook?select=id&limit=1', {
+                  headers: { apikey: key, ...(key.startsWith('eyJ') ? { Authorization: 'Bearer ' + key } : {}) },
+                  signal: AbortSignal.timeout(20000)
+                });
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+                if (!Array.isArray(await response.json())) throw new Error('Invalid response');
+                console.log('Guestbook read succeeded. No messages were written or logged.');
+                return;
+              } catch (error) {
+                console.log('Read attempt ' + attempt + ' failed: ' + error.message);
+                if (attempt < 3) await new Promise(resolve => setTimeout(resolve, 5000));
+              }
+            }
+            console.error('::error::Guestbook unavailable. Check Supabase project status and resume if paused.');
+            process.exitCode = 1;
+          })();
+          NODE

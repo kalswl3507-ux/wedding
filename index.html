@@ -93,7 +93,8 @@
             color: var(--accent);
         }
         .title { font-family: Georgia, 'Times New Roman', serif; font-size: 1.8rem; font-weight: 700; letter-spacing: .08em; margin-bottom: 28px; }
-        .gallery-header h3, .section-title { letter-spacing: .04em; }
+        .gallery-header h3, .section-title { font-family: Georgia, 'Times New Roman', serif; font-size: 1.45rem; font-weight: 700; letter-spacing: .08em; }
+        .calendar-month { margin: 24px 0 20px; color: var(--accent); font-size: 1rem; }
         .invitation-details { margin: -8px 0 30px; color: var(--accent); font-size: .9rem; line-height: 1.9; word-break: keep-all; }
         .invitation-details p { margin: 4px 0; }
         .invitation-details time { display: block; }
@@ -125,7 +126,7 @@
             .names { font-size: 1.25rem; gap: 10px; }
         }
         .transit-guide { margin-top: 32px; text-align: left; font-size: .85rem; line-height: 1.9; color: #666; word-break: keep-all; }
-        .transit-guide h4 { margin: 28px 0 12px; font-family: inherit; font-size: 1rem; font-weight: 600; color: var(--accent); }
+        .transit-guide h4 { margin: 28px 0 12px; font-family: Georgia, 'Times New Roman', serif; font-size: 1rem; font-weight: 700; color: var(--accent); }
         .transit-guide p { margin: 8px 0; }
         .transit-guide strong { font-weight: 500; color: #494340; }
         .transit-guide .bus-routes { font-size: .8rem; color: #777; }
@@ -338,8 +339,9 @@
                 </div>
 
                 <section class="wedding-calendar" aria-labelledby="calendarTitle">
+                    <h3 class="section-title" id="calendarTitle">Date</h3>
                     <p class="date"><time datetime="2027-01-10T15:40:00+09:00">2027년 1월 10일 일요일 오후 3시 40분</time></p>
-                    <h3 class="section-title" id="calendarTitle">2027년 1월</h3>
+                    <p class="calendar-month">2027년 1월</p>
                     <table class="calendar-table" aria-label="2027년 1월 달력, 10일 결혼식">
                         <thead><tr><th scope="col">일</th><th scope="col">월</th><th scope="col">화</th><th scope="col">수</th><th scope="col">목</th><th scope="col">금</th><th scope="col">토</th></tr></thead>
                         <tbody>
@@ -353,7 +355,7 @@
                     </table>
                 </section>
                 <div class="gallery-header">
-                    <h3>우리의 순간</h3>
+                    <h3>Gallery</h3>
                 </div>
 
                 <div class="gallery-container">
@@ -367,7 +369,7 @@
                     <div class="thumb-slider" id="thumbnails" aria-label="웨딩 사진 목록"></div>
                 </div>
                 <section class="info" aria-labelledby="directionsTitle">
-                    <h3 class="section-title" id="directionsTitle">오시는 길</h3>
+                    <h3 class="section-title" id="directionsTitle">Location</h3>
 
                     <div class="venue-heading"><div class="location">라마다호텔 신도림 14F 하늘정원 홀</div><a class="venue-phone" href="tel:0221622100" aria-label="라마다 신도림 호텔 웨딩에 전화하기, 02-2162-2100">
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -383,9 +385,9 @@
                     </div>
                     <p class="navigation-status" id="navigationStatus" role="status"></p>
                     <div class="transit-guide">
-                        <h4>지하철</h4>
+                        <h4>Subway</h4>
                         <p><strong>1·2호선 신도림역 1번 출구</strong><br>광장으로 나오신 뒤 호텔 방향으로 도보 약 5분입니다.</p>
-                        <h4>버스</h4>
+                        <h4>Bus</h4>
                         <p><strong>‘신도림동(구로역)’ 정류장 하차</strong><br>하차 후 위 지도 앱의 도보 길찾기를 이용해 호텔 입구로 와 주세요.</p>
                         <p class="bus-routes">간선 · 160, 503, 600, 662, 660<br>지선 · 6515, 6516, 6637, 6640A, 6640B(신도림역 방면), 6713<br>직행 · 5200, 301, 320<br>경기일반 · 10, 11-1, 11-2, 530, 83, 88</p>
                         <p><strong>‘신도림중학교’ 정류장 하차</strong><br>하차 후 호텔 방향으로 도보 이동해 주세요.</p>
@@ -393,7 +395,7 @@
                     </div>
                 </section>
                 <section class="gift-section" aria-labelledby="giftTitle">
-                    <h3 class="section-title" id="giftTitle">마음 전하실 곳</h3>
+                    <h3 class="section-title" id="giftTitle">Gifts</h3>
                     <details class="gift-group">
                         <summary>신랑측</summary>
                         <ul class="gift-accounts">
@@ -430,7 +432,7 @@
                     </details>
                 </section>
                 <section class="guestbook" aria-labelledby="guestbookTitle">
-                    <h3 class="section-title" id="guestbookTitle">방명록</h3>
+                    <h3 class="section-title" id="guestbookTitle">Guestbook</h3>
                     <form class="guestbook-form" id="guestbookForm">
                         <label>이름<input name="name" autocomplete="name" maxlength="20" placeholder="이름을 입력해 주세요." required></label>
                         <label>축하 메시지<textarea name="message" maxlength="500" placeholder="두 사람에게 전하고 싶은 마음을 남겨주세요." required></textarea></label>

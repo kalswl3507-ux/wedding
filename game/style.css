@@ -8,16 +8,8 @@ body { min-height:100svh; display:grid; place-items:center; }
 canvas { display:block; width:100%; height:100%; image-rendering:pixelated; touch-action:none; }
 button { border:0; border-radius:0; font:700 12px ui-monospace,"Courier New",monospace; cursor:pointer; touch-action:manipulation; }
 button:focus-visible,canvas:focus-visible { outline:2px solid #ffe8a4; outline-offset:-3px; }
-.screen-overlay { position:absolute; inset:0; display:flex; justify-content:center; align-items:flex-start; padding-top:clamp(32px,9vw,78px); touch-action:none; }
-.start-card { width:86%; max-width:620px; text-align:center; color:#fff; }
 .pixel-label { width:100%; height:auto; pointer-events:none; }
-.start-card p { display:inline-block; font:500 clamp(12px,3.4vw,18px)/1.5 system-ui,sans-serif; margin:14px 0 0; padding:5px 10px; color:#fff8de; background:#303047; }
-.end-controls button { color:#fff8de; background:#383448; padding:7px 13px; min-height:34px; border:2px solid #ead5b6; box-shadow:0 0 0 2px #292737,3px 4px 0 2px #292737; width:clamp(132px,28vw,205px); }
-.start-card button { display:block; width:100%; min-height:clamp(60px,16vw,112px); padding:12px 18px; color:#fff8de; background:#303047; border:4px solid #ffe4a0; box-shadow:0 0 0 3px #242134,5px 6px 0 3px #242134; }
-.start-card button:active:not(:disabled) { transform:translateY(3px); box-shadow:0 0 0 3px #242134,3px 3px 0 3px #242134; }
-.start-card button:disabled { opacity:.6; }
 .end-controls { position:absolute; bottom:2%; left:0; right:0; text-align:center; pointer-events:none; }
-.end-controls button { pointer-events:auto; }
 .game-toolbar { position:absolute; right:5px; top:2px; pointer-events:none; }
 .game-toolbar p { display:none; }
 .game-toolbar button { pointer-events:auto; color:#fff2d0; background:transparent; min-height:32px; min-width:44px; padding:6px 4px; font-size:clamp(7px,1.4vw,10px); }
@@ -25,23 +17,14 @@ button:focus-visible,canvas:focus-visible { outline:2px solid #ffe8a4; outline-o
 [hidden] { display:none!important; }
 .sr-only { position:absolute; width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap; }
 
-/* Reference-style start title and pink pixel button. */
-@font-face { font-family: 'Game Korean'; src: url('../assets/fonts/Galmuri11.woff2') format('woff2'); font-display: swap; }
-.screen-overlay { padding-top: 2%; }
-.start-card { width: 62%; max-width: 480px; }
-.start-title { width: 80%; height: auto; margin: 0 auto; }
-.start-card p { display: block; margin: 0 0 10px; padding: 0; background: none; color: #304958; font: 400 clamp(10px, 2.8vw, 19px)/1.5 'Game Korean', monospace; white-space: nowrap; }
-.start-card button { position: relative; display: flex; align-items: center; justify-content: center; gap: 12px; width: 82%; min-height: 36px; margin: 0 auto; padding: 8px 12px; border: 2px solid #574549; background: #ed89a8; box-shadow: inset 0 0 0 2px #ffe9ef, 2px 3px 0 #574549; }
-.start-card button .pixel-label { width: 72%; height: auto; }
-.start-card button::before { content: ''; width: 8px; height: 12px; background: #fff4e4; clip-path: polygon(0 0, 40% 0, 40% 25%, 70% 25%, 70% 40%, 100% 40%, 100% 60%, 70% 60%, 70% 75%, 40% 75%, 40% 100%, 0 100%); }
-.start-card button:active:not(:disabled) { transform: translateY(2px); box-shadow: inset 0 0 0 2px #ffe9ef, 1px 1px 0 #574549; }
 
-/* Keep the start panel entirely above the groom's head at every viewport size. */
 .game-frame { container-type: inline-size; }
-.screen-overlay { padding-top: 2cqw; }
-.start-card { width: 34%; max-width: none; }
-.start-title { width: 100%; }
-.start-card p { font-size: 2cqw; line-height: 1.5; margin: 0 0 1cqw; }
-.start-card button { width: 74%; min-height: 0; height: 6cqw; padding: .8cqw 1.7cqw; gap: 1.2cqw; border-width: 1px; box-shadow: inset 0 0 0 1px #ffe9ef, 1px 2px 0 #574549; }
-.start-card button::before { width: 1.5cqw; height: 2.3cqw; flex-shrink: 0; }
-.start-card button .pixel-label { width: 74%; max-height: 4.5cqw; }
+
+/* Original user-supplied UI art; the SVG viewBoxes select transparent regions only. */
+.screen-overlay { position:absolute; inset:0; display:flex; justify-content:center; align-items:flex-start; padding-top:2cqw; touch-action:none; }
+.start-card { width:27%; }
+.start-card button { display:block; padding:0; margin:0 auto; border:0; background:none; box-shadow:none; line-height:0; }
+.start-card button { width:100%; }
+.start-card button svg { display:block; width:100%; height:auto; image-rendering:pixelated; pointer-events:none; }
+.start-card button:disabled { cursor:wait; }
+.end-controls button { color:#fff8de; background:#383448; padding:7px 13px; min-height:34px; border:2px solid #ead5b6; box-shadow:0 0 0 2px #292737,3px 4px 0 2px #292737; width:clamp(132px,28vw,205px); pointer-events:auto; }

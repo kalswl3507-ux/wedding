@@ -54,7 +54,7 @@
     ['archWide',88],['wallFlowers',88],['wall',70]
   ].map(([name,width])=>{const segment={name,x:terraceX,width};terraceX+=width;return segment;});
   const files=['groom_run','groom_jump','groom_jumpdown','bride_waiting','bride_groom_meet','wedding','ending_ring','ending_kiss','castle','tree','trees','bushy','flowertree','cloud','floor_ground','floor_stone','floor_castle','stage1_back','stage2_back','stage3_back','flower','coin','yoso','mysterybox','ring'];
-  files.push('heart_coin','ending_cheerup','stones','stones2');
+  files.push('heart_coin','ending_cheerup','stones','stones2','start');
   const images={},failed=[];
   let settled=0;
   function reportLoading(){window.parent.postMessage({type:'wedding:loading',loaded:++settled,total:files.length,ready:false},'*');}

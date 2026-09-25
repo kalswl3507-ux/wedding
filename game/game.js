@@ -15,30 +15,9 @@
     P.text(ink,label,width/2,1,'#fff1d7',scale,true);
     element.setAttribute('aria-label',label);element.replaceChildren(graphic);
   }
+
   pixelLabel(document.getElementById('restartButton'),'PLAY AGAIN',150);
   pixelLabel(muteButton,'SOUND OFF',110);
-  const titleInk=document.getElementById('startTitle').getContext('2d');
-  titleInk.imageSmoothingEnabled=false;
-  function outlinedTitle(label,y){
-    for(let dx=-2;dx<=2;dx++)for(let dy=-2;dy<=2;dy++)P.text(titleInk,label,90+dx,y+dy+2,'#554542',4,true);
-    P.text(titleInk,label,90,y+1,'#e2a7b6',4,true);
-    P.text(titleInk,label,89,y-1,'#fff3e6',4,true);
-  }
-  // Integer pixels keep the larger heart crisp, with a complete dark outline.
-  ['011000110','122101221','122212221','122222221','012222210','001222100','000121000','000010000'].forEach((row,y)=>{
-    [...row].forEach((pixel,x)=>{if(pixel!=='0'){titleInk.fillStyle=pixel==='1'?'#665051':'#f4a1ba';titleInk.fillRect(81+x*2,1+y*2,2,2);}});
-  });
-  titleInk.fillStyle='#ffe3eb';titleInk.fillRect(83,3,4,2);titleInk.fillRect(83,5,2,2);
-  outlinedTitle('GAME',24);outlinedTitle('START',59);
-  function sparkle(x,y,size){
-    const arm=Math.floor(size/2),stem=size>7?3:1;
-    titleInk.fillStyle='#e3f6ff';
-    titleInk.fillRect(x-arm,y-Math.floor(stem/2),size,stem);
-    titleInk.fillRect(x-Math.floor(stem/2),y-arm,stem,size);
-    titleInk.fillStyle='#fffaf2';
-    titleInk.fillRect(x-1,y-1,3,3);
-  }
-  [[14,46,13],[28,15,5],[22,80,3],[159,29,5],[168,66,9]].forEach(args=>sparkle(...args));
   let state=E.create(),accumulator=0,last=0,sceneTime=0,endingAnnounced=false;
   const audio={muted:true,unlocked:false,context:null,music:null,tracks:{}};
   function unlockAudio(){
@@ -75,8 +54,8 @@
   });
   let assetsReady=false;
   const startButton=document.getElementById('startButton');
-  startButton.disabled=true;pixelLabel(startButton,'LOADING...');
-  WeddingArt.ready.then(()=>{assetsReady=true;startButton.disabled=false;pixelLabel(startButton,'START',90);if(WeddingArt.failed.length)document.getElementById('instruction').textContent='일부 이미지를 불러오지 못했어요. 새로고침해 주세요.';window.parent.postMessage({type:'wedding:loading',loaded:1,total:1,ready:true,failed:WeddingArt.failed.length},'*');});
+  startButton.disabled=true;startButton.setAttribute('aria-label','게임 준비 중');
+  WeddingArt.ready.then(()=>{assetsReady=true;startButton.disabled=false;startButton.setAttribute('aria-label','게임 시작');if(WeddingArt.failed.length)document.getElementById('instruction').textContent='일부 이미지를 불러오지 못했어요. 새로고침해 주세요.';window.parent.postMessage({type:'wedding:loading',loaded:1,total:1,ready:true,failed:WeddingArt.failed.length},'*');});
   function begin(){
     if(!assetsReady)return;
     unlockAudio();if(state.mode!=='ready')return;

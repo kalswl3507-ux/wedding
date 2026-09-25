@@ -6,6 +6,6 @@
 .countdown-pixel { max-width: 280px; background: #fff0f3; color: #805768; clip-path: polygon(8px 0, calc(100% - 8px) 0, calc(100% - 8px) 4px, calc(100% - 4px) 4px, calc(100% - 4px) 8px, 100% 8px, 100% calc(100% - 8px), calc(100% - 4px) calc(100% - 8px), calc(100% - 4px) calc(100% - 4px), calc(100% - 8px) calc(100% - 4px), calc(100% - 8px) 100%, 8px 100%, 8px calc(100% - 4px), 4px calc(100% - 4px), 4px calc(100% - 8px), 0 calc(100% - 8px), 0 8px, 4px 8px, 4px 4px, 8px 4px); }
 .countdown-pixel strong { font-family: 'Wedding Pixel', monospace; font-size: clamp(28px, 8vw, 36px); }
 .countdown-pixel p::before { content: ''; display: inline-block; width: 13px; height: 12px; margin-right: 8px; background: #c58d9f; clip-path: polygon(0 0, 40% 0, 40% 20%, 60% 20%, 60% 0, 100% 0, 100% 50%, 80% 50%, 80% 70%, 60% 70%, 60% 100%, 40% 100%, 40% 70%, 20% 70%, 20% 50%, 0 50%); }
-.countdown-formal { max-width: 280px; color: #77624e; background: #f6f1e9; font-family: 'Noto Serif KR', 'Batang', serif; }
-.countdown-formal p { letter-spacing: .06em; color: #81715f; }
-.countdown-formal strong { font-size: clamp(28px, 8vw, 36px); letter-spacing: .08em; }
+.countdown-formal { display: flex; justify-content: center; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; margin: 18px auto 0; padding: 0; color: #77624e; background: none; font-family: 'Noto Serif KR', 'Batang', serif; }
+.countdown-formal p { margin: 0; font-size: 11px; letter-spacing: .02em; color: #81715f; }
+.countdown-formal strong { font-size: 20px; letter-spacing: .04em; white-space: nowrap; }

@@ -17,6 +17,16 @@
   }
   pixelLabel(document.getElementById('restartButton'),'PLAY AGAIN',150);
   pixelLabel(muteButton,'SOUND OFF',110);
+  const titleInk=document.getElementById('startTitle').getContext('2d');
+  titleInk.imageSmoothingEnabled=false;
+  function outlinedTitle(label,y){
+    for(let dx=-2;dx<=2;dx++)for(let dy=-2;dy<=2;dy++)P.text(titleInk,label,90+dx,y+dy+2,'#554542',4,true);
+    P.text(titleInk,label,90,y+1,'#e2a7b6',4,true);
+    P.text(titleInk,label,89,y-1,'#fff3e6',4,true);
+  }
+  P.heart(titleInk,90,2,2,'#554542');P.heart(titleInk,90,2,1.5,'#f5a5bd');
+  outlinedTitle('GAME',24);outlinedTitle('START',59);
+  [[22,15],[155,33],[10,68],[167,74]].forEach(([x,y])=>{titleInk.fillStyle='#fff6ed';titleInk.fillRect(x-3,y,7,2);titleInk.fillRect(x,y-3,2,7);});
   let state=E.create(),accumulator=0,last=0,sceneTime=0,endingAnnounced=false;
   const audio={muted:true,unlocked:false,context:null,music:null,tracks:{}};
   function unlockAudio(){
@@ -54,7 +64,7 @@
   let assetsReady=false;
   const startButton=document.getElementById('startButton');
   startButton.disabled=true;pixelLabel(startButton,'LOADING...');
-  WeddingArt.ready.then(()=>{assetsReady=true;startButton.disabled=false;pixelLabel(startButton,'TAP TO START');if(WeddingArt.failed.length)document.getElementById('instruction').textContent='일부 이미지를 불러오지 못했어요. 새로고침해 주세요.';window.parent.postMessage({type:'wedding:loading',loaded:1,total:1,ready:true,failed:WeddingArt.failed.length},'*');});
+  WeddingArt.ready.then(()=>{assetsReady=true;startButton.disabled=false;pixelLabel(startButton,'START',90);if(WeddingArt.failed.length)document.getElementById('instruction').textContent='일부 이미지를 불러오지 못했어요. 새로고침해 주세요.';window.parent.postMessage({type:'wedding:loading',loaded:1,total:1,ready:true,failed:WeddingArt.failed.length},'*');});
   function begin(){
     if(!assetsReady)return;
     unlockAudio();if(state.mode!=='ready')return;

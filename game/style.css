@@ -24,3 +24,14 @@ button:focus-visible,canvas:focus-visible { outline:2px solid #ffe8a4; outline-o
 .game-toolbar button { width:clamp(54px,13vw,90px); }
 [hidden] { display:none!important; }
 .sr-only { position:absolute; width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap; }
+
+/* Reference-style start title and pink pixel button. */
+@font-face { font-family: 'Game Korean'; src: url('../assets/fonts/Galmuri11.woff2') format('woff2'); font-display: swap; }
+.screen-overlay { padding-top: 2%; }
+.start-card { width: 62%; max-width: 480px; }
+.start-title { width: 80%; height: auto; margin: 0 auto; }
+.start-card p { display: block; margin: 0 0 10px; padding: 0; background: none; color: #304958; font: 400 clamp(10px, 2.8vw, 19px)/1.5 'Game Korean', monospace; white-space: nowrap; }
+.start-card button { position: relative; display: flex; align-items: center; justify-content: center; gap: 12px; width: 82%; min-height: 36px; margin: 0 auto; padding: 8px 12px; border: 2px solid #574549; background: #ed89a8; box-shadow: inset 0 0 0 2px #ffe9ef, 2px 3px 0 #574549; }
+.start-card button .pixel-label { width: 72%; height: auto; }
+.start-card button::before { content: ''; width: 8px; height: 12px; background: #fff4e4; clip-path: polygon(0 0, 40% 0, 40% 25%, 70% 25%, 70% 40%, 100% 40%, 100% 60%, 70% 60%, 70% 75%, 40% 75%, 40% 100%, 0 100%); }
+.start-card button:active:not(:disabled) { transform: translateY(2px); box-shadow: inset 0 0 0 2px #ffe9ef, 1px 1px 0 #574549; }

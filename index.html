@@ -19,8 +19,8 @@
     <meta name="twitter:description" content="2027년 1월 10일 일요일 오후 3시 40분">
     <meta name="twitter:image" content="https://kalswl3507-ux.github.io/wedding/assets/share-gallery-2-close.jpg">
     <script>document.documentElement.classList.add('invitation-locked');</script>
-    <link rel="stylesheet" href="welcome.css?v=simple-entry-6">
-    <script defer src="welcome.js?v=simple-entry-6"></script>
+    <link rel="stylesheet" href="welcome.css?v=envelope-entry-7">
+    <script defer src="welcome.js?v=envelope-entry-7"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -290,9 +290,15 @@
 <body>
     <section class="welcome-screen" id="welcomeScreen" aria-labelledby="welcomeTitle" hidden>
         <div class="welcome-card">
-            <p class="welcome-meta" id="welcomeTitle"><span>최호진 · 김채나</span><span aria-hidden="true">·</span><time class="welcome-date" datetime="2027-01-10">2027.01.10</time></p>
+            <span class="welcome-corner welcome-corner-top" aria-hidden="true">♥</span>
+            <span class="welcome-corner welcome-corner-bottom" aria-hidden="true">♥</span>
+            <img class="welcome-envelope" src="game/png/letter.png" width="1600" height="976" alt="" fetchpriority="high">
+            <h1 id="welcomeTitle">초대장이 도착했습니다!</h1>
+            <p class="welcome-meta"><span>최호진 · 김채나</span><time class="welcome-date" datetime="2027-01-10">2027.01.10</time></p>
             <div class="welcome-progress" role="progressbar" aria-label="초대장 준비" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="welcomeProgress"></span></div>
-            <button class="welcome-enter" id="welcomeEnter" type="button" disabled>입장하기</button>
+            <div class="welcome-action" aria-live="polite">
+                <button class="welcome-enter" id="welcomeEnter" type="button" disabled>초대장 열기</button>
+            </div>
         </div>
     </section>
     <div class="music-toolbar">

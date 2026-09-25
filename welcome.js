@@ -26,7 +26,8 @@
         progress.parentElement.setAttribute('aria-valuenow', String(percent));
         if (data.ready) {
             enter.disabled = false;
-            enter.textContent = '입장하기';
+            enter.textContent = '초대장 열기';
+            enter.hidden = false;
             clearTimeout(slow);
             clearInterval(check);
         }
@@ -47,6 +48,7 @@
     const slow = setTimeout(() => {
         enter.disabled = false;
         enter.textContent = '먼저 입장하기';
+        enter.hidden = false;
     }, 20000);
     enter.addEventListener('click', () => { if (!enter.disabled) open(); });
 })();

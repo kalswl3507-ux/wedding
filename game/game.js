@@ -16,7 +16,6 @@
     element.setAttribute('aria-label',label);element.replaceChildren(graphic);
   }
 
-  pixelLabel(document.getElementById('restartButton'),'PLAY AGAIN',150);
   pixelLabel(muteButton,'SOUND OFF',110);
   let state=E.create(),accumulator=0,last=0,sceneTime=0,endingAnnounced=false;
   const audio={muted:true,unlocked:false,context:null,music:null,tracks:{}};

@@ -27,4 +27,5 @@ button:focus-visible,canvas:focus-visible { outline:2px solid #ffe8a4; outline-o
 .start-card button { width:100%; }
 .start-card button svg { display:block; width:100%; height:auto; image-rendering:pixelated; pointer-events:none; }
 .start-card button:disabled { cursor:wait; }
-.end-controls button { color:#fff8de; background:#383448; padding:7px 13px; min-height:34px; border:2px solid #ead5b6; box-shadow:0 0 0 2px #292737,3px 4px 0 2px #292737; width:clamp(132px,28vw,205px); pointer-events:auto; }
+.end-controls button { display:block; margin:0 auto; padding:0; border:0; background:none; box-shadow:none; line-height:0; width:clamp(132px,28vw,205px); pointer-events:auto; }
+.end-controls button svg { display:block; width:100%; height:auto; image-rendering:pixelated; pointer-events:none; }

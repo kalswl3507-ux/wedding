@@ -54,7 +54,7 @@
     ['archWide',88],['wallFlowers',88],['wall',70]
   ].map(([name,width])=>{const segment={name,x:terraceX,width};terraceX+=width;return segment;});
   const files=['groom_run','groom_jump','groom_jumpdown','bride_waiting','bride_groom_meet','wedding','ending_ring','ending_kiss','castle','tree','trees','bushy','flowertree','cloud','floor_ground','floor_stone','floor_castle','stage1_back','stage2_back','stage3_back','flower','coin','yoso','mysterybox','ring'];
-  files.push('heart_coin','ending_cheerup','stones','stones2','start');
+  files.push('heart_coin','ending_cheerup','stones','stones2','start','ending');
   const images={},failed=[];
   let settled=0;
   function reportLoading(){window.parent.postMessage({type:'wedding:loading',loaded:++settled,total:files.length,ready:false},'*');}
@@ -278,16 +278,9 @@
       P.rect(ctx,0,0,C.width,C.height,'#ffffff');
       ctx.restore();
       sprite(ctx,images[ending]?ending:'wedding',245,212,81);
-      // A compact, double-bordered RPG message panel leaves the castle visible.
-      P.rect(ctx,18,39,258,83,'#292737');
-      P.rect(ctx,21,42,252,77,'#e9d9c6');
-      P.rect(ctx,23,44,248,73,'#292737');
-      P.rect(ctx,26,47,242,67,'#383448');
-      lettering(ctx,'STAGE CLEAR!',147,53,2,'#ffe4a4',true);
-      lettering(ctx,C.coupleNames,147,76,2,'#fff8ef',true);
-      lettering(ctx,C.date,147,99,1,'#ffc2d6',true);
-      if(state.ringCollected)sprite(ctx,'ringIcon',250,110,22);
-      lettering(ctx,'HAPPILY EVER AFTER',147,131,1,'#fff9ed',true);
+      // Supplied title panel; the separate button region is used by the HTML control.
+      if(images.ending)ctx.drawImage(images.ending,80,0,1760,568,18,15,258,83);
+      if(state.ringCollected)sprite(ctx,'ringIcon',239,92,22);
     }
     if(w.rain>.01){ctx.globalAlpha=w.rain*.6;for(let i=0;i<60*w.rain;i++){
       const x=((i*71-time*85)%520+520)%520,y=(i*47+time*180)%300;

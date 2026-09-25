@@ -272,6 +272,11 @@
       if(state.mode==='running'&&state.distance<220)lettering(ctx,'TAP TO JUMP',160,130,1,'#fff9ed',true);
     }else{
       const ending=state.lives===0?'ending_cheerup':state.ringCollected?(state.heartsCollected===3?'ending_kiss':'ending_ring'):'wedding';
+      // Soften only the completed background; keep the couple and ending text crisp.
+      ctx.save();
+      ctx.globalAlpha=.15;
+      P.rect(ctx,0,0,C.width,C.height,'#ffffff');
+      ctx.restore();
       sprite(ctx,images[ending]?ending:'wedding',245,212,81);
       // A compact, double-bordered RPG message panel leaves the castle visible.
       P.rect(ctx,18,39,258,83,'#292737');

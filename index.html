@@ -283,6 +283,7 @@
         .copy-status { font-size: .75rem; color: var(--accent); margin: 4px 0 0; }
         .copy-status:empty { display: none; }
     </style>
+    <link rel="stylesheet" href="countdown.css?v=1">
 </head>
 <body>
     <section class="welcome-screen" id="welcomeScreen" aria-labelledby="welcomeTitle" hidden>
@@ -353,6 +354,7 @@
                             <tr><td><span>31</span></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                         </tbody>
                     </table>
+                    <div class="wedding-countdown countdown-pixel" data-wedding-countdown="pixel" hidden><p data-countdown-caption></p><strong data-countdown-value></strong></div>
                 </section>
                 <div class="gallery-header">
                     <h3>우리의 순간</h3>
@@ -609,5 +611,6 @@
     <script src="navigation.js"></script>
     <script src="accounts.js"></script>
     <script src="music.js?v=preload-trimmed-1"></script>
+    <script src="countdown.js?v=1"></script>
 </body>
 </html>

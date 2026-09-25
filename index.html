@@ -283,6 +283,7 @@
         .copy-status { font-size: .75rem; color: var(--accent); margin: 4px 0 0; }
         .copy-status:empty { display: none; }
     </style>
+    <link rel="stylesheet" href="footer-dday.css?v=1">
 </head>
 <body>
     <section class="welcome-screen" id="welcomeScreen" aria-labelledby="welcomeTitle" hidden>
@@ -442,6 +443,11 @@
                     <ul class="guestbook-list" id="guestbookList"></ul>
                 </section>
                 <p class="music-credit">Music · <a href="https://www.youtube.com/watch?v=YFMhXdWpMBM" target="_blank" rel="noopener noreferrer">샛별(Daystar) – 계란꽃</a></p>
+                <div class="footer-dday footer-dday-pixel" data-wedding-countdown="footer" role="img" hidden>
+                    <span class="footer-dday-ornament" aria-hidden="true"><svg viewBox="0 0 16 14" shape-rendering="crispEdges"><path fill="currentColor" d="M2 0h4v2h4V0h4v2h2v6h-2v2h-2v2h-2v2H6v-2H4v-2H2V8H0V2h2z"/></svg></span>
+                    <span class="footer-dday-number" aria-hidden="true">D <span data-countdown-sign>-</span> <span data-countdown-value></span></span>
+                    <span class="footer-dday-ornament footer-dday-right" aria-hidden="true"><svg viewBox="0 0 16 14" shape-rendering="crispEdges"><path fill="currentColor" d="M2 0h4v2h4V0h4v2h2v6h-2v2h-2v2h-2v2H6v-2H4v-2H2V8H0V2h2z"/></svg></span>
+                </div>
             </div>
         </div>
     </div>
@@ -609,5 +615,6 @@
     <script src="navigation.js"></script>
     <script src="accounts.js"></script>
     <script src="music.js?v=preload-trimmed-1"></script>
+    <script src="countdown.js?v=footer-4"></script>
 </body>
 </html>

@@ -11,12 +11,10 @@
         const now = Date.now();
         const remaining = weddingDay - Math.floor((now + koreaOffset) / day);
         cards.forEach(card => {
-            const value = remaining > 0 ? `D-${remaining}`
-                : remaining === 0 ? 'D-DAY' : `D+${-remaining}`;
-            const caption = remaining > 0 ? '두 사람의 시작까지'
-                : remaining === 0 ? '오늘, 저희 결혼합니다' : '함께 걸어온 날들';
-            card.querySelector('[data-countdown-value]').textContent = value;
-            card.querySelector('[data-countdown-caption]').textContent = caption;
+            card.querySelector('[data-countdown-value]').textContent = Math.abs(remaining);
+            card.querySelector('[data-countdown-sign]').textContent = remaining < 0 ? '+' : '-';
+            card.setAttribute('aria-label', remaining > 0 ? `결혼식까지 ${remaining}일`
+                : remaining === 0 ? '오늘 결혼합니다' : `결혼한 지 ${-remaining}일`);
             card.hidden = false;
         });
         timer = setTimeout(update, day - ((now + koreaOffset) % day) + 100);

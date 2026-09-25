@@ -2,6 +2,7 @@
     const root = document.documentElement;
     const screen = document.getElementById('welcomeScreen');
     const progress = document.getElementById('welcomeProgress');
+    const enter = document.getElementById('welcomeEnter');
     const frame = document.getElementById('weddingGame');
     const behind = [...document.body.children].filter(el => el !== screen && el.tagName !== 'SCRIPT');
     behind.forEach(el => { el.inert = true; });
@@ -23,7 +24,12 @@
         const percent = Math.min(100, Math.max(0, Math.round(data.loaded / data.total * 100))) || 0;
         progress.style.width = percent + '%';
         progress.parentElement.setAttribute('aria-valuenow', String(percent));
-        if (data.ready) open();
+        if (data.ready) {
+            enter.disabled = false;
+            enter.textContent = '입장하기';
+            clearTimeout(slow);
+            clearInterval(check);
+        }
     }
     window.addEventListener('message', event => {
         if (event.source !== frame.contentWindow || (event.origin !== location.origin && event.origin !== 'null')) return;
@@ -38,5 +44,9 @@
         } catch { /* file:// uses postMessage instead. */ }
     }, 300);
     // A stalled game request must not lock the invitation itself indefinitely.
-    const slow = setTimeout(open, 20000);
+    const slow = setTimeout(() => {
+        enter.disabled = false;
+        enter.textContent = '먼저 입장하기';
+    }, 20000);
+    enter.addEventListener('click', () => { if (!enter.disabled) open(); });
 })();

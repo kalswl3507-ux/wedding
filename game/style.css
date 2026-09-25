@@ -22,7 +22,14 @@ button:focus-visible,canvas:focus-visible { outline:2px solid #ffe8a4; outline-o
 
 /* Original user-supplied UI art; the SVG viewBoxes select transparent regions only. */
 .screen-overlay { position:absolute; inset:0; display:flex; justify-content:center; align-items:flex-start; padding-top:2cqw; touch-action:none; }
-.start-card { width:27%; }
+.start-card { position:relative; width:27%; }
+.start-sparkles { position:absolute; inset:0; pointer-events:none; }
+.start-sparkles i { position:absolute; display:block; width:1.3cqw; height:1.3cqw; background:#fff7ed; clip-path:polygon(38% 0,62% 0,62% 38%,100% 38%,100% 62%,62% 62%,62% 100%,38% 100%,38% 62%,0 62%,0 38%,38% 38%); }
+.start-sparkles i:nth-child(1) { width:2.8cqw; height:2.8cqw; left:-20%; top:30%; }
+.start-sparkles i:nth-child(2) { left:-7%; top:10%; }
+.start-sparkles i:nth-child(3) { width:1cqw; height:1cqw; left:-10%; top:57%; }
+.start-sparkles i:nth-child(4) { width:2.1cqw; height:2.1cqw; right:-18%; top:24%; }
+.start-sparkles i:nth-child(5) { right:-11%; top:52%; }
 .start-card button { display:block; padding:0; margin:0 auto; border:0; background:none; box-shadow:none; line-height:0; }
 .start-card button { width:100%; }
 .start-card button svg { display:block; width:100%; height:auto; image-rendering:pixelated; pointer-events:none; }

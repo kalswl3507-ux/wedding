@@ -35,3 +35,13 @@ button:focus-visible,canvas:focus-visible { outline:2px solid #ffe8a4; outline-o
 .start-card button .pixel-label { width: 72%; height: auto; }
 .start-card button::before { content: ''; width: 8px; height: 12px; background: #fff4e4; clip-path: polygon(0 0, 40% 0, 40% 25%, 70% 25%, 70% 40%, 100% 40%, 100% 60%, 70% 60%, 70% 75%, 40% 75%, 40% 100%, 0 100%); }
 .start-card button:active:not(:disabled) { transform: translateY(2px); box-shadow: inset 0 0 0 2px #ffe9ef, 1px 1px 0 #574549; }
+
+/* Keep the start panel entirely above the groom's head at every viewport size. */
+.game-frame { container-type: inline-size; }
+.screen-overlay { padding-top: 2cqw; }
+.start-card { width: 34%; max-width: none; }
+.start-title { width: 100%; }
+.start-card p { font-size: 2cqw; line-height: 1.5; margin: 0 0 1cqw; }
+.start-card button { width: 88%; min-height: 0; height: 7cqw; padding: 1cqw 2cqw; gap: 1.5cqw; border-width: 1px; box-shadow: inset 0 0 0 1px #ffe9ef, 1px 2px 0 #574549; }
+.start-card button::before { width: 1.5cqw; height: 2.3cqw; flex-shrink: 0; }
+.start-card button .pixel-label { width: 74%; max-height: 4.5cqw; }

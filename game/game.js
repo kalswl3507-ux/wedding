@@ -24,9 +24,21 @@
     P.text(titleInk,label,90,y+1,'#e2a7b6',4,true);
     P.text(titleInk,label,89,y-1,'#fff3e6',4,true);
   }
-  P.heart(titleInk,90,2,2,'#554542');P.heart(titleInk,90,2,1.5,'#f5a5bd');
+  // Integer pixels keep the larger heart crisp, with a complete dark outline.
+  ['011000110','122101221','122212221','122222221','012222210','001222100','000121000','000010000'].forEach((row,y)=>{
+    [...row].forEach((pixel,x)=>{if(pixel!=='0'){titleInk.fillStyle=pixel==='1'?'#665051':'#f4a1ba';titleInk.fillRect(81+x*2,1+y*2,2,2);}});
+  });
+  titleInk.fillStyle='#ffe3eb';titleInk.fillRect(83,3,4,2);titleInk.fillRect(83,5,2,2);
   outlinedTitle('GAME',24);outlinedTitle('START',59);
-  [[22,15],[155,33],[10,68],[167,74]].forEach(([x,y])=>{titleInk.fillStyle='#fff6ed';titleInk.fillRect(x-3,y,7,2);titleInk.fillRect(x,y-3,2,7);});
+  function sparkle(x,y,size){
+    const arm=Math.floor(size/2),stem=size>7?3:1;
+    titleInk.fillStyle='#e3f6ff';
+    titleInk.fillRect(x-arm,y-Math.floor(stem/2),size,stem);
+    titleInk.fillRect(x-Math.floor(stem/2),y-arm,stem,size);
+    titleInk.fillStyle='#fffaf2';
+    titleInk.fillRect(x-1,y-1,3,3);
+  }
+  [[14,46,13],[28,15,5],[22,80,3],[159,29,5],[168,66,9]].forEach(args=>sparkle(...args));
   let state=E.create(),accumulator=0,last=0,sceneTime=0,endingAnnounced=false;
   const audio={muted:true,unlocked:false,context:null,music:null,tracks:{}};
   function unlockAudio(){

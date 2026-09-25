@@ -19,6 +19,7 @@
             screen.classList.toggle('is-ready', !data.failed);
             ready = true;
             failed = data.failed > 0;
+            screen.classList.toggle('has-notice', failed);
             enter.disabled = false;
             enter.textContent = failed ? '다시 준비하기' : '초대장 열기 →';
             status.textContent = failed ? '일부 그림을 불러오지 못했어요.' : '준비됐어요. 두 사람의 이야기를 만나보세요.';
@@ -44,6 +45,7 @@
     const slow = setTimeout(() => {
         if (ready || entered) return;
         status.textContent = '조금 더 준비하고 있어요. 잠시만 기다려 주세요.';
+        screen.classList.add('has-notice');
         skip.hidden = false;
     }, 20000);
     function open() {

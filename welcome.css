@@ -7,7 +7,6 @@
 .welcome-card { width: 100%; max-width: 390px; margin: auto; text-align: center; color: #806d69; font-family: 'Welcome Pixel', monospace; }
 .welcome-meta { display: flex; justify-content: center; align-items: center; gap: 9px; margin: 0 0 22px; font-size: clamp(14px, 4.35vw, 20px); line-height: 1.6; white-space: nowrap; letter-spacing: -.035em; }
 .welcome-date { font: inherit; }
-.welcome-progress { position: relative; width: 68%; max-width: 246px; height: 22px; margin: 0 auto; padding: 6px; background: #efa5ba; clip-path: polygon(6px 0,calc(100% - 6px) 0,calc(100% - 6px) 3px,100% 3px,100% calc(100% - 3px),calc(100% - 6px) calc(100% - 3px),calc(100% - 6px) 100%,6px 100%,6px calc(100% - 3px),0 calc(100% - 3px),0 3px,6px 3px); box-sizing: border-box; }
-.welcome-progress::before { content: ''; position: absolute; inset: 3px; background: #fff8fa; }
-.welcome-progress span { position: relative; display: block; height: 10px; width: 0; background: #f794b7; transition: width .15s steps(4); }
+.welcome-progress { width: 68%; max-width: 246px; height: 10px; margin: 0 auto; padding: 0; border: 0; background: #ededed; overflow: hidden; }
+.welcome-progress span { display: block; height: 100%; width: 0; background: #f2a0bb; transition: width .2s ease; }
 @media (prefers-reduced-motion: reduce) { .welcome-progress span { transition: none; } }

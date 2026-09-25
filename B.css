@@ -391,3 +391,5 @@ body, html { background: #faf7f2; color: #443c35; }
 }
 
 .wedding-calendar > .line-4:last-child { margin: 40px auto 0; }
+
+.person-phone svg, .venue-phone svg { fill: currentColor; stroke: none; }

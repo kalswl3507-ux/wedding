@@ -6,5 +6,7 @@
 .footer-dday-ornament svg { flex: 0 0 17px; width: 17px; height: 17px; }
 .footer-dday-right { flex-direction: row-reverse; }
 
+@font-face { font-family: 'Footer Pixel'; src: url('assets/fonts/Galmuri11.woff2') format('woff2'); font-display: swap; }
 .footer-dday-pixel { color: #a17a87; }
+.footer-dday-pixel .footer-dday-number { font-family: 'Footer Pixel', monospace; }
 .footer-dday-pixel .footer-dday-ornament svg { width: 16px; height: 14px; flex-basis: 16px; color: #bd899c; }

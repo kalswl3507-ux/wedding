@@ -14,36 +14,49 @@ const photos = Array.from({ length: 30 }, (_, i) => [i + 1]);
         let generation = 0;
         let returnFocus;
         let savedOverflow;
+        const photoHistoryId = 'wedding-photo-' + Date.now();
         const loaded = new Map();
         const landscape = new Set();
         const count = index => `${photos[index].map(number => String(number).padStart(2, '0')).join('·')} / 30`;
 
-        function renderPhoto(container, index, lazy = false) {
-            container.replaceChildren();
-            container.classList.toggle('paired', photos[index].length === 2);
-            container.classList.toggle('landscape', landscape.has(index));
-            photos[index].forEach(number => {
-                const img = document.createElement('img');
-                img.alt = `웨딩 사진 ${number}`;
-                if (lazy) img.loading = 'lazy';
-                img.decoding = 'async';
-                img.src = source(number, lazy ? 'thumb' : 'slide');
-                if (container === popupPhoto) {
-                    const large = new Image();
-                    large.decoding = 'async';
-                    large.onload = () => { if (img.isConnected) img.src = large.src; };
-                    large.src = source(number, 'large');
-                }
-                img.onload = () => {
-                    if (photos[index].length === 1 && img.naturalWidth > img.naturalHeight) {
-                        landscape.add(index);
-                        container.classList.add('landscape');
-                    }
+        const renders = new WeakMap();
+        function decodedImage(number, variant, lazy = false) {
+            const img = new Image();
+            img.alt = `웨딩 사진 ${number}`;
+            img.decoding = 'async';
+            if (lazy) img.loading = 'lazy';
+            const ready = new Promise(resolve => {
+                img.onload = async () => {
+                    try { if (img.decode) await img.decode(); resolve(img); }
+                    catch { resolve(null); }
                 };
-                container.append(img);
+                img.onerror = () => resolve(null);
             });
+            img.src = source(number, variant);
+            return { img, ready };
         }
-
+        async function renderPhoto(container, index, lazy = false) {
+            const token = {};
+            renders.set(container, token);
+            const pictures = photos[index].map(number => decodedImage(number, lazy ? 'thumb' : 'slide', lazy));
+            function commit(images) {
+                container.classList.toggle('paired', images.length === 2);
+                const wide = images.length === 1 && images[0].naturalWidth > images[0].naturalHeight;
+                container.classList.toggle('landscape', wide);
+                if (wide) landscape.add(index);
+                container.replaceChildren(...images);
+            }
+            if (lazy) { commit(pictures.map(picture => picture.img)); return true; }
+            // Decode the actual DOM images, not just a separate preload request.
+            const images = await Promise.all(pictures.map(picture => picture.ready));
+            if (renders.get(container) !== token || images.some(img => !img)) return false;
+            commit(images);
+            if (container === popupPhoto) {
+                const large = await Promise.all(photos[index].map(number => decodedImage(number, 'large').ready));
+                if (renders.get(container) === token && large.every(Boolean)) commit(large);
+            }
+            return true;
+        }
         function preload(index) {
             if (!loaded.has(index)) {
                 loaded.set(index, Promise.all(photos[index].map(number => new Promise(resolve => {
@@ -91,10 +104,24 @@ const photos = Array.from({ length: 30 }, (_, i) => [i + 1]);
             if (token !== generation) return;
             if (ready) {
                 const nextLayer = 1 - visibleLayer;
-                renderPhoto(layers[nextLayer], next);
+                const incoming = layers[nextLayer];
+                const outgoing = layers[visibleLayer];
+                const painted = await renderPhoto(incoming, next);
+                if (token !== generation) return;
+                if (!painted) { scheduleSlide(); return; }
+                incoming.style.zIndex = '2';
+                outgoing.style.zIndex = '1';
+                // Keep the previous photo fully opaque under the new photo.
+                // Establish the hidden frame before starting the opacity transition.
+                void incoming.offsetWidth;
                 layers[nextLayer].removeAttribute('aria-hidden');
                 layers[nextLayer].classList.add('visible');
-                layers[visibleLayer].classList.remove('visible');
+                setTimeout(() => {
+                    outgoing.style.transition = 'none';
+                    outgoing.classList.remove('visible');
+                    void outgoing.offsetWidth;
+                    outgoing.style.removeProperty('transition');
+                }, 1100);
                 layers[visibleLayer].setAttribute('aria-hidden', 'true');
                 visibleLayer = nextLayer;
                 current = next;
@@ -106,24 +133,39 @@ const photos = Array.from({ length: 30 }, (_, i) => [i + 1]);
 
         function showPopupPhoto(index) {
             popupIndex = (index + photos.length) % photos.length;
+            if (dialog.open && history.state?.weddingPhoto === photoHistoryId) {
+                history.replaceState({ ...history.state, photoIndex: popupIndex }, '');
+            }
             renderPhoto(popupPhoto, popupIndex);
             document.getElementById('popupCount').textContent = count(popupIndex);
             preload((popupIndex + 1) % photos.length);
         }
 
-        function openPopup(index, button) {
+        function openPopup(index, button, addHistory = true) {
             returnFocus = button;
             stopSlideshow();
             showPopupPhoto(index);
             savedOverflow = document.body.style.overflow;
             document.body.style.overflow = 'hidden';
             dialog.showModal();
+            if (addHistory) {
+                history.pushState({ ...history.state, weddingPhoto: photoHistoryId, photoIndex: popupIndex }, '');
+            }
         }
 
+        window.addEventListener('popstate', event => {
+            if (event.state?.weddingPhoto === photoHistoryId) {
+                if (!dialog.open) openPopup(event.state.photoIndex, returnFocus, false);
+            } else if (dialog.open) {
+                dialog.close();
+            }
+        });
         document.getElementById('closePopup').addEventListener('click', () => dialog.close());
         document.getElementById('prevPhoto').addEventListener('click', () => showPopupPhoto(popupIndex - 1));
         document.getElementById('nextPhoto').addEventListener('click', () => showPopupPhoto(popupIndex + 1));
         dialog.addEventListener('close', () => {
+            renders.delete(popupPhoto);
+            if (history.state?.weddingPhoto === photoHistoryId) history.back();
             document.body.style.overflow = savedOverflow;
             returnFocus?.focus({ preventScroll: true });
             scheduleSlide();
@@ -153,8 +195,8 @@ const photos = Array.from({ length: 30 }, (_, i) => [i + 1]);
             if (started) return;
             started = true;
             // First photo takes priority over the small thumbnail requests.
-            preload(0).then(() => {
-                renderPhoto(layers[0], 0);
+            preload(0).then(async () => {
+                await renderPhoto(layers[0], 0);
                 scheduleSlide();
             });
             createThumbnails();

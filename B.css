@@ -134,7 +134,7 @@
             overflow: hidden;
             margin-bottom: 20px;
         }
-        .slide-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out; }
+        .slide-photo { background: #fff; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out; }
         .slide-photo.visible { opacity: 1; }
         .slide-photo > img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .slide-photo.landscape > img { object-fit: contain; }

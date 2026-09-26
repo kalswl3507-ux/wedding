@@ -161,7 +161,7 @@
             overflow: hidden;
             margin-bottom: 20px;
         }
-        .slide-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out; }
+        .slide-photo { background: #fff; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out; }
         .slide-photo.visible { opacity: 1; }
         .slide-photo > img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .slide-photo.landscape > img { object-fit: contain; }
@@ -465,7 +465,7 @@
             <button type="button" id="nextPhoto" aria-label="다음 사진">다음 →</button>
         </div>
     </dialog>
-    <script src="gallery.js?v=web-photos-1"></script>
+    <script src="gallery.js?v=decoded-fade-2"></script>
     <script src="site-config.js?v=supabase-1"></script>
     <script src="guestbook.js?v=recovery-2"></script>
     <script src="navigation.js"></script>
